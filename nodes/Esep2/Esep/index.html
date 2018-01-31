@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Esep 2</title>
+    <link rel="stylesheet" href="../../../css/tasks/materialize.min.css">
+    <link rel="stylesheet" href="../../../css/tasks/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="contentWrapper">
+                <div class="esepTitle">
+                    Егер жоғарғы жылу көзі t<sub>1</sub> = <span class="temp1">2500</span> &#x2103; тұрақты температурада, ал t<sub>2</sub> төменгі жылу көзінің температурасы <span class="temp2a">200</span> ден <span class="temp2b">100</span> &#x2103; температураға дейін төмендетілсе, Карно циклінің ПӘК-і қалай өзгереді?
+                </div>
+                <div class="content">
+                    <div class="blockTitle">Берілгені:</div>
+                    <p>
+                        t<sub>1</sub> = <span class="temp1">2500</span> &#x2103;
+                    </p>
+                    <p>
+                        t<sub>2</sub> : <span class="temp2a">200</span> &#x2192; <span class="temp2b">100</span> &#x2103;
+                    </p>
+                    <p>
+                        Т/к η <sub>t</sub> (Карно циклоның ПӘК қалай өзгереді?)
+                    </p>
+                    <img src="assets/img/formula1.png" alt="">
+                    <p class="primechanie">*Ответ округляется до сотых (Өрнек: 2.94)</p>
+                    <form action="" class="userForms col s6" id="userForms">
+                        <div class="active input-field clearB user_input_field">
+                            <input id="userInput1" name="userInput1" type="text" class="validate">
+                            <label for="userInput1">Карно циклының ПӘК өсуі (%)</label>
+                        </div>
+                        <div class="input-field actionButtons clearB">
+                            <button class="waves-effect deep-orange darken-1 btn" type="button" id="generateRandom">Генерировать</button>
+                            <button class="waves-effect waves-light btn right green darken-1" type="submit">Тексеру</button>
+                        </div>
+                        <div class="input-field actionButtons clearB">
+                            <button class="waves-effect waves-light btn yellow darken-2 left" type="button" id="show_solution">Шығарылуы</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="answers clearB" id="solution">
+                    <div class="content">
+                        <div class="blockTitle">
+                            Шығарылуы:
+                        </div>
+                        <div class="steps">
+                            <p>
+                                T<sub>2</sub> = t<sub>2</sub> + 273 = <span class="bigT2a">473</span> К
+                            </p>
+                            <p>
+                                ПӘК: <span class="nta">0.83</span>
+                            </p>
+                            <p>
+                                T<sub>2</sub> = t<sub>2</sub> + 273 = <span class="bigT2b">373</span> К
+                            </p>
+                            <p>
+                                ПӘК: <span class="ntb">0.87</span>
+                            </p>
+                            <p>
+                                Δη<sub>t</sub> Карно циклының ПӘК өсуі (%): 
+                            </p>
+                            <p>
+                                ((<span class="ntb">0.87</span> - <span class="nta">0.83</span>)/<span class="ntb">0.87</span>) * 100 = <span class="answer">4.16</span>%
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../js/tasks/jquery-3.3.1.min.js"></script>
+    <script src="../../../js/tasks/materialize.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

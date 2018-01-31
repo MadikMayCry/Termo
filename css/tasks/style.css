@@ -1,0 +1,83 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: #e3f2fd;
+}
+
+.contentWrapper{
+	margin-top: 50px;
+}
+
+.content{
+	padding: 20px 30px;
+	overflow-x: auto;
+	font-size: 16px;
+}
+
+input.correct{
+	color: #fff;
+	background-color: #81c784!important;
+}
+
+input.wrong{
+	color: #fff!important;
+    border-color: red!important;
+    background: #e53935!important;
+}
+
+.content p{
+	font-size: 16px;
+}
+
+.esepTitle{
+	font-size: 26px;
+	text-align: center;
+}
+
+.blockTitle{
+	font-size: 26px;
+}
+
+.clearB{
+	clear: both;
+}
+
+.answers{
+	display: none;
+	margin-top: 30px;
+}
+
+.steps{
+	margin-bottom: 5px;
+}
+
+.solutionImg{
+	vertical-align: middle;
+}
+
+.solutionText{
+	display: inline-block;
+}
+
+.infl{
+	display: inline-flex;
+}
+
+.primechanie{
+	margin-top: 10px;
+}
+
+.user_input_field{
+	display: none;
+}
+
+.user_input_field.active{
+	display: block;
+}
+
+.italic{
+	font-style: italic;
+}

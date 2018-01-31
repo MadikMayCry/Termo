@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Esep 9</title>
+        <link rel="stylesheet" href="assets/css/materialize.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="contentWrapper">
+                    <div class="esepTitle">
+                        <span class="italic">p = const</span> кезіндегі жылу берілумен жүретін цикл үшін нүктелердегі пайдалы жұмысты, термиялық ПӘК-ті, алынған және берілген жылу мөлшерін табу қажет
+                        
+                    </div>
+                    <div class="content">
+                        <div class="blockTitle">Берілгені:</div>
+                        <span class="solutionText">
+                            $$p_1 = 0.1 МПа; t_1 = 20℃; ε=12.7;k = 1.4. $$
+                        </span>
+                        <p>
+                            Жұмысшы дене – ауа.  Жылусыйымдылық тұрақты деп аламыз.
+                        </p>
+                        <p class="primechanie">* Ответ округляется до сотых (Пример: 2.94)</p>
+                        <form action="" class="userForms" id="userForms">
+                            <div class="input-field col s6 clearB">
+                                <input id="userInput1" name="userInput1" type="text" class="validate">
+                                <label for="userInput1">Сығылу процессі соңындағы ауа параметрі (К)</label>
+                            </div>
+                            <div class="input-field col s6 clearB">
+                                <input id="userInput2" name="userInput2" type="text" class="validate">
+                                <label for="userInput2">Жану процессінің соңындағы ауа параметрлері (К)</label>
+                            </div>
+                            <div class="input-field col s6 clearB">
+                                <input id="userInput3" name="userInput3" type="text" class="validate">
+                                <label for="userInput3">Адиабаталық ұлғаю процессі соңындағы ауаның параметрі (МПа)</label>
+                            </div>
+                            <div class="input-field col s6 clearB">
+                                <input id="userInput4" name="userInput4" type="text" class="validate">
+                                <label for="userInput4">Карно циклының термиялық ПӘК-ті:</label>
+                            </div>
+                            <div class="input-field actionButtons clearB">
+                                <button class="waves-effect waves-light btn left" type="button" id="show_solution">Шығарылуы</button>
+                                <button class="waves-effect waves-light btn right" type="submit">Тексеру</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="answers clearB" id="solution">
+                        <div class="content">
+                            <div class="blockTitle">
+                                Шығарылуы:
+                            </div>
+                            <div class="steps">
+                                <p>
+                                    Меншікті көлемді анықтаймыз:
+                                </p>
+                                <p class="italic">1 нүкте.</p>
+                                <span class="solutionText">$$ v_1 = {RT_1 \over p_1} = {287 * 293 \over  0.1 * 10^6} = 0.84 {м^3 \over кг}. $$</span>
+                            </div>
+                            <div class="steps">
+                                <p><span class="italic">2 нүкте.</span> Сығылу дәрежесі мынаған тең болғандықтан,</p>
+                                <span class="solutionText">
+                                    $$ ε = {v_1 \over v_2} = 12.7 $$ 
+                                </span>
+                                <span>болса, онда </span>
+                                <span class="solutionText">
+                                    $$ ε = {v_1 \over v_2} = 12.7 $$ 
+                                </span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/jquery-3.3.1.min.js"></script>
+        <script src="assets/js/materialize.min.js"></script>
+        <script src="../MathJax/MathJax.js"></script>
+        <script src="assets/js/custom.js"></script>
+    </body>
+</html>

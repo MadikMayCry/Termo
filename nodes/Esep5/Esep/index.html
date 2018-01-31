@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Esep 3</title>
+        <link rel="stylesheet" href="../../../css/tasks/materialize.min.css">
+        <link rel="stylesheet" href="../../../css/tasks/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="contentWrapper">
+                    <div class="esepTitle">
+                        <span class="italic">t</span><sub>1</sub> = <span class="temp1">30</span> &#x2103; бастапқы температура мен <span class="italic">p</span><sub>1</sub> = <span class="p1">0.1</span> МПа бастапқы қысымда 1 кг ауа соңғы <span class="italic">p</span><sub>2</sub> = <span class="p2">1</span> МПа қысымға дейін сығылады. Соңғы көлем, температура және атқарылған жұмысты анықтау.
+                    </div>
+                    <div class="content">
+                        <div class="blockTitle">Берілгені:</div>
+                        <p>
+                            <span class="italic">m</span> = 1 кг
+                        </p>
+                        <p>
+                            <span class="italic">t</span><sub>1</sub> = <span class="temp1">30</span> &#x2103;
+                        </p>
+                        <p>
+                            <span class="italic">p</span><sub>1</sub> = <span class="p1">0.1</span> МПа
+                        </p>
+                        <p>
+                            <span class="italic">p</span><sub>2</sub> = <span class="p2">1</span> МПа
+                        </p>
+                        <p>
+                            <span class="italic">k</span> = 1.4
+                        </p>
+                        <p>
+                            <span class="italic">T/k  v<sub>2</sub> , T<sub>2</sub> , l - ?</span>
+                        </p>
+                        <p class="primechanie">* Ответ округляется до сотых (Пример: 2.94)</p>
+                        <form action="" class="userForms" id="userForms">
+                            <div class="input-field col s6 clearB user_input_field active">
+                                <img src="assets/img/formula1.png" alt="">
+                                <div class="input-field">
+                                    <input id="userInput1" name="userInput1" type="text" class="validate">
+                                    <label for="userInput1">Температура (К)</label>
+                                </div>
+                            </div>
+                            <div class="input-field col s6 clearB user_input_field">
+                                <img src="assets/img/formula2.png" alt="">
+                                <div class="input-field">
+                                    <input id="userInput2" name="userInput2" type="text" class="validate">
+                                    <label for="userInput2">Соңғы көлем(м^2/кг)</label>
+                                </div>
+                            </div>
+                            <div class="input-field col s6 clearB user_input_field">
+                                <img src="assets/img/formula3.png" alt="">
+                                <div class="input-field">
+                                    <input id="userInput3" name="userInput3" type="text" class="validate">
+                                    <label for="userInput3">Атқарылған жұмыс(кДж/кг)</label>
+                                </div>
+                            </div>
+                            <div class="input-field actionButtons clearB">
+                                <button class="waves-effect deep-orange darken-1 btn" type="button" id="generateRandom">Генерировать</button>
+                                <button class="waves-effect waves-light btn right green darken-1" type="submit">Тексеру</button>
+                            </div>
+                            <div class="input-field actionButtons clearB">
+                                <button class="waves-effect waves-light btn yellow darken-2 left" type="button" id="show_solution">Шығарылуы</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="answers clearB" id="solution">
+                        <div class="content">
+                            <div class="blockTitle">
+                                Шығарылуы:
+                            </div>
+                            <div class="steps">
+                                <p>Адиабаталық процесстің параметрлер қатынасынан
+                                <spab class="italic">T</spab><sub>2</sub> температурасы анықталады:</p>
+                                <span class="solutionText">
+                                    <span class="ktemp2"></span> K
+                                </span>
+                            </div>
+                            <div class="steps">
+                                <p>Соңғы көлем күй теңдеуінен анықталады.</p>
+                                <span class="solutionText">
+                                    <span class="v"></span> м<sup>2</sup>/кг
+                                </span>
+                            </div>
+                            <div class="steps">
+                                <p>Процессте атқарылған жұмыс</p>
+                                <span class="solutionText">
+                                    <span class="w"></span> кДж/кг
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../../js/tasks/jquery-3.3.1.min.js"></script>
+        <script src="../../../js/tasks/materialize.min.js"></script>
+        <script src="assets/js/custom.js"></script>
+    </body>
+</html>

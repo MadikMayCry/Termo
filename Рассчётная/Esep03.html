@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Esep 03</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="jquery/jquery-1.11.3.js"></script>
+</head>
+
+<body style="max-width: 60%; margin: 0 auto;">
+    <style type="text/css">
+    body {
+        background: LAVENDER;
+    }
+
+    .box {
+        padding: 0px 20px 0px 15px;
+    }
+
+    fieldset.box {
+        background: WHITESMOKE;
+        border: solid 1px DIMGRAY !important;
+        padding: 0 10px 10px 10px;
+        border-bottom: none;
+    }
+
+    legend.box_legend {
+        width: auto !important;
+        border: none;
+        font-size: 14px;
+    }
+    </style>
+    <!-- START HTML -->
+    <br/>
+    <p style="font-family: 'Bitter', serif; font-size: 30px; font-weight: normal; line-height: 54px">
+        Вычислить массу фотона, длина волны которого определена
+    </p>
+    <fieldset class="box">
+        <legend class="box_legend">Введите значения:</legend>
+        <br> λ:
+        <input id="input_λ" type="number" style="border-radius:10px;margin:3px;padding:3px;text-indent: 1em;" placeholder="Введите число"> *10<sup>-9</sup> м
+        <br>
+        <br>
+        <button id="generate" class="btn btn-primary">Сгенерировать рандомные значения</button>
+        <button id="start1" class="btn btn-primary">Считать значения</button>
+        <br>
+        <br>
+    </fieldset>
+    <br/>
+    <fieldset class="box" id="step01">
+        <legend class="box_legend">Шаг 1. Записать уравнение де Бройля и из него вычислить массу фотона:</legend>
+        <p>
+            <img src="formula/formula-3.1.png" alt="formula-3.1" style="width: 11%" />
+        </p>
+        <p>
+            где m - масса фотона;
+            <br> h - постоянная Планка = 6.626*10<sup>-34</sup> Дж/с;
+            <br> λ - длина волны;
+            <br> c - скорость фотона (равна скорости света) = 3*10<sup>8</sup> м/с.
+        </p>
+        <p>
+            m<sub>ф</sub>:
+            <input id="input_mf" type="number" step="0.01" style="border-radius:10px;margin:3px;padding:3px;text-indent: 1em;" placeholder="Введите число"> *10<sup>-36</sup> кг
+            <br>
+            <br>
+        </p>
+        <p>
+            <input class="btn btn-primary" type="button" id="step01Ans" value="Ответить">
+            <input class="btn btn-primary" type="button" id="step01CorrectAns" value="Показать правильный ответ">
+            <br>
+            <br> Правильные ответы (ответ округляется до сотых): <span id="correctAnswer_mf"></span>
+        </p>
+    </fieldset>
+    <br>
+    <fieldset class="box" id="step02">
+        <legend class="box_legend">Шаг 2. Сделать там анау мыные:</legend>
+        <p>
+            <img src="formula/formula-3.1.png" alt="formula-3.1" style="width: 11%" />
+        </p>
+        <p>
+            где m - масса фотона;
+            <br> h - постоянная Планка = 6.626*10<sup>-34</sup> Дж/с;
+            <br> λ - длина волны;
+            <br> c - скорость фотона (равна скорости света) = 3*10<sup>8</sup> м/с.
+        </p>
+        <p>
+            m<sub>ф</sub>:
+            <input id="input_mf2" type="number" step="0.01" style="border-radius:10px;margin:3px;padding:3px;text-indent: 1em;" placeholder="Введите число"> *10<sup>-36</sup> кг
+            <br>
+            <br>
+        </p>
+        <p>
+            <input class="btn btn-primary" type="button" id="step02Ans" value="Ответить">
+            <input class="btn btn-primary" type="button" id="step02CorrectAns" value="Показать правильный ответ">
+            <br>
+            <br> Правильные ответы (ответ округляется до сотых): <span id="correctAnswer_mf2"></span>
+        </p>
+    </fieldset>
+    <br>
+    <fieldset class="box" id="mark">Ваша оценка: <span id="markValue"></span>% <span id="markSend"></span></fieldset>
+</body>
+<script>
+$(document).ready(function() {
+
+    var mark = 0;
+
+    $("#step01").hide();
+    $("#step02").hide();
+    $('#mark').hide();
+
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    $("#generate").click(function() {
+        var λ = getRandomArbitrary(100, 1000).toFixed(0);
+        $("#input_λ").val(λ);
+    });
+
+    function disabledStart() {
+        $("#generate").prop("disabled", true);
+        $("#start1").prop("disabled", true);
+        $("#input_λ").prop("disabled", true);
+    }
+
+    $("#start1").click(function() {
+        if ($("#input_λ").val() != '') {
+            disabledStart();
+            $("#step01").show();
+        } else {
+            alert("Заполните поле значения!");
+        }
+    });
+
+    //STEP-01
+    function disableStep1() {
+        $("#step01CorrectAns").prop("disabled", true);
+        $("#step01Ans").prop("disabled", true);
+    }
+
+    function getmf() {
+        var mf = 6.626 / ($('#input_λ').val() * 3);
+        return parseFloat((mf * 1000).toFixed(2));
+    }
+    $("#step01Ans").click(function() {
+        console.log("TypeOf --- " + typeof(getmf()));
+        if (getmf() == $('#input_mf').val()) {
+            $("#input_mf").css("border", "2px solid green");
+            $("#correctAnswer_mf").html("m<sub>ф</sub>: " + getmf() + " *10<sup>-36</sup> кг");
+            disableStep1();
+            mark++;
+            $('#step02').show();
+        } else {
+            $("#input_mf").css("border", "2px solid red");
+        }
+    });
+    $("#step01CorrectAns").click(function() {
+        $("#correctAnswer_mf").html("m<sub>ф</sub>: " + getmf() + " *10<sup>-36</sup> кг");
+        disableStep1();
+        $('#step02').show();
+    });
+
+    //STEP-02
+    function disableStep2() {
+        $("#step02CorrectAns").prop("disabled", true);
+        $("#step02Ans").prop("disabled", true);
+    }
+
+    function getmf2() {
+        var mf = 6.626 / ($('#input_λ').val() * 3);
+        return parseFloat((mf * 1000).toFixed(2));
+    }
+    $("#step02Ans").click(function() {
+        console.log("TypeOf --- " + typeof(getmf()));
+        if (getmf() == $('#input_mf2').val()) {
+            $("#input_mf2").css("border", "2px solid green");
+            $("#correctAnswer_mf2").html("m<sub>ф</sub>: " + getmf() + " *10<sup>-36</sup> кг");
+            disableStep1();
+            mark++;
+            $("#mark").show();
+            mark = (mark / 2.0) * 100;
+            $("#markValue").html(mark);
+            $("#markSend").html("<a href='problem:" + mark + "'>Завершить задачу</a>");
+        } else {
+            $("#input_mf2").css("border", "2px solid red");
+        }
+    });
+    $("#step02CorrectAns").click(function() {
+        $("#correctAnswer_mf2").html("m<sub>ф</sub>: " + getmf() + " *10<sup>-36</sup> кг");
+        disableStep1();
+        $("#mark").show();
+        mark = (mark / 2.0) * 100;
+        $("#markValue").html(mark);
+        $("#markSend").html("<a href='problem:" + mark + "'>Завершить задачу</a>");
+        $('#step02').show();
+    });
+});
+</script>
+
+</html>
