@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Esep 8</title>
+        <title>Esep 9</title>
         <link rel="stylesheet" href="../../../css/tasks/materialize.min.css">
         <link rel="stylesheet" href="../../../css/tasks/style.css">
     </head>
@@ -11,74 +11,44 @@
             <div class="row">
                 <div class="contentWrapper">
                     <div class="esepTitle">
-                        <span class="italic">v</span> = const кезіндегі жылу беріле жүретін іштен жану двигатель циклінің негізгі нүктелеріндегі параметрлерін табыңыз,  циклдің термиялық ПӘК-тін  және <span class="italic">ε</span> = 4,6,8,10,12 деп алып, сығылу дәрежесінен тәуелділігін анықтаңыз.
+                        <span class="italic">v</span> = const кезіндегі жылу берілумен жүретін цикл үшін нүктелердегі пайдалы жұмысты, термиялық ПӘК-ті, алынған және берілген жылу мөлшерін табу қажет
                         
                     </div>
                     <div class="content">
                         <div class="blockTitle">Берілгені:</div>
+                        <span class="solutionText">
+                            p<sub>1</sub>  = <span class="p1">0.1</span> МПа; t<sub>1</sub>  = <span class="temp1">20</span>; ε = <span class="e">12.7</span> ; k = 1.4.
+                        </span>
                         <p>
-                            Циклдын бастапқы нүкте параметрлері <span class="italic">p</span><sub>1</sub> = <span class="p1">0.1</span> МПа, t<sub>1</sub> = <span class="temp1">127</span> &#8451;;
-                            <br>
-                            Сығылу дәрежесі <span class="italic">ε</span> = 6; қысымның жоғарылау дәрежесі <span class="italic">λ</span> = <span class="lambda">3.5</span>.
-                            <br>
-                            Жұмысшы дене – ауа, меншікті газ тұрақтылығы R = 287  Дж/(кг*К) тең, адиабата көрсеткіші k = 1.41.
-                            <br>
-                            Есептеп шығарылған  ПӘК-ті <span class="italic">η</span><sub>tv</sub> максималды және минималды ауа температурасы кезіндегі Карно циклының термиялық ПӘК-тімен салыстырыңыз.
+                            Жұмысшы дене – ауа.  Жылусыйымдылық тұрақты деп аламыз.
                         </p>
-                        <p>Ауаның бастапқы меншікті көлемі:</p>
-                        <img src="assets/img/formula1.png" alt="">
                         
                         <p class="primechanie">* Ответ округляется до сотых (Пример: 2.94)</p>
                         <form action="" class="userForms col s6" id="userForms">
                             <div class="input-field clearB user_input_field active">
-                                <img src="assets/img/formula2.png" alt="">
+                                <p class="italic">1 нүкте.</p>
+                                <img src="assets/img/formula1.png" alt="">
                                 <div class="input-field">
                                     <input id="userInput1" name="userInput1" type="text" class="validate">
-                                    <label for="userInput1">Сығылу процессі соңындағы ауа параметрі υ<sub>2υ</sub>(м<sup>3</sup>/кг)</label>
+                                    <label for="userInput1">Меншікті көлемді анықтаймыз: v<sub>1</sub>(м<sup>3</sup>/кг)</label>
                                 </div>
-                                <img src="assets/img/formula3.png" alt="">
+                            </div>
+                            <div class="input-field clearB user_input_field">
+                                <p class="italic">2 нүкте.</p>
+                                <img src="assets/img/formula2.png" alt="">
                                 <div class="input-field">
                                     <input id="userInput2" name="userInput2" type="text" class="validate">
-                                    <label for="userInput2">Сығылу процессі соңындағы ауа параметрі p<sub>2</sub> (МПа)</label>
+                                    <label for="userInput2">Меншікті көлемді анықтаймыз: v<sub>2</sub>(м<sup>3</sup>/кг)</label>
                                 </div>
-                                <img src="assets/img/formula4.png" alt="">
+                                    <img src="assets/img/formula2.png" alt="">
                                 <div class="input-field">
-                                    <input id="userInput3" name="userInput3" type="text" class="validate">
-                                    <label for="userInput3">Сығылу процессі соңындағы ауа параметрі T<sub>2</sub> (К)</label>
+                                    <input id="userInput2" name="userInput2" type="text" class="validate">
+                                    <label for="userInput2">Адиабаталық сығылу соңындағы температура: t(K)</label>
                                 </div>
-                            </div>
-                            <div class="input-field clearB user_input_field">
-                                <img src="assets/img/formula5.png" alt="">
+                                    <img src="assets/img/formula2.png" alt="">
                                 <div class="input-field">
-                                    <input id="userInput4" name="userInput4" type="text" class="validate">
-                                    <label for="userInput4">Жану процессінің соңындағы ауа параметрі υ<sub>2υ</sub>(м<sup>3</sup>/кг)</label>
-                                </div>
-                                <img src="assets/img/formula6.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput5" name="userInput5" type="text" class="validate">
-                                    <label for="userInput5">Жану процессінің соңындағы ауа параметрі p<sub>2</sub> (МПа)</label>
-                                </div>
-                                <img src="assets/img/formula7.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput6" name="userInput6" type="text" class="validate">
-                                    <label for="userInput6">Жану процессінің соңындағы ауа параметрі T<sub>2</sub> (К)</label>
-                                </div>
-                            </div>
-                            <div class="input-field clearB user_input_field">
-                                <img src="assets/img/formula8.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput7" name="userInput7" type="text" class="validate">
-                                    <label for="userInput7">Адиабаталық процессі ауаның параметрі υ<sub>2υ</sub>(м<sup>3</sup>/кг)</label>
-                                </div>
-                                <img src="assets/img/formula9.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput8" name="userInput8" type="text" class="validate">
-                                    <label for="userInput8">Адиабаталық процессі ауаның параметрі p<sub>2</sub> (МПа)</label>
-                                </div>
-                                <img src="assets/img/formula10.png" alt="">
-                                <div class="input-field">
-                                    <label for="userInput9">Адиабаталық процессі ауаның параметрі T<sub>2</sub> (К)</label>
-                                    <input id="userInput9" name="userInput9" type="text" class="validate">
+                                    <input id="userInput2" name="userInput2" type="text" class="validate">
+                                    <label for="userInput2">Меншікті көлемді анықтаймыз: p(МПа)</label>
                                 </div>
                             </div>
                             <div class="input-field actionButtons clearB">
