@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Esep 15</title>
+    <link rel="stylesheet" href="../../../css/tasks/materialize.min.css">
+    <link rel="stylesheet" href="../../../css/tasks/style.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="contentWrapper">
+                <div class="esepTitle">
+                    Қорғасын тотығы, су (бу) және екі атомды қорғасын тотықтарының сәйкесінше <span class="pbo">52700</span>, <span class="h2o">57800</span> және
+                    <span class="pbo2">65300</span> кал/моль стандарт жылу түзілу мәндерін біле отырып, сутегі екі атомды қорғасын мен су (бу) түзілу тотығына дейін қалпына келу реакциясының жылулық құбылысын анықтаңыз.
+                </div>
+                <div class="content">
+                    <div class="blockTitle">Берілгені:</div>
+                    <span class="italic">PbO</span> = <span class="pbo">52700</span>
+                    <br>
+                    <span class="italic">PbO<sub>2</sub></span> = <span class="pbo2">65300</span>
+                    <br>
+                    <span class="italic">H<sub>2</sub>O</span> = <span class="h2o">57800</span>
+                    <br>
+                    <span class="italic">Т/к Q<sub>p</sub> </span>-?
+                    <p class="primechanie">* Ответ округляется до десятых (Пример: 2.9)</p>
+                    <form action="" class="userForms col s8" id="userForms">
+                        <div class="input-field clearB user_input_field active">
+                            <img src="assets/img/formula1.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput1" name="userInput1" type="text" class="validate">
+                                <label for="userInput1">Мұздатқыш камерасына келіп түсетін ауа температурасы: (K)</label>
+                            </div>
+                        </div>
+                        <div class="input-field actionButtons clearB">
+                            <button class="waves-effect deep-orange darken-1 btn" type="button" id="generateRandom">Генерировать</button>
+                            <button class="waves-effect waves-light btn right green darken-1" type="submit">Тексеру</button>
+                        </div>
+                        <div class="input-field actionButtons clearB">
+                            <button class="waves-effect waves-light btn yellow darken-2 left" type="button" id="show_solution">Шығарылуы</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="answers clearB" id="solution">
+                    <div class="content">
+                        <div class="blockTitle">
+                            Шығарылуы:
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Гесс заңының төртінші салдарынан
+                                <br>
+                                <span class="italic">Q<sub>p</sub></span> = <span class="pbo">52700</span> + <span class="h2o">57800</span> - <span class="pbo2">65300</span> =
+                                <span class="qp">45200</span> <span class="italic">кал/моль</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../js/tasks/jquery-3.3.1.min.js"></script>
+    <script src="../../../js/tasks/materialize.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

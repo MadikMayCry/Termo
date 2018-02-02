@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Esep 14</title>
+    <link rel="stylesheet" href="../../../css/tasks/materialize.min.css">
+    <link rel="stylesheet" href="../../../css/tasks/style.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="contentWrapper">
+                <div class="esepTitle">
+                    Мұздатқыш камераға келіп түсетін ауаның температурасын, суықөнімділігін, мұздатқыш коэффициентін және циклда жұмсалған теориялық жұмысын анықтаңыз. Сол температура интервалында қайтымды Карно циклы бойынша жұмыс жасайтын қондырғы үшін мұздатқыш коэффициентін
+                    анықтаңыз.
+                </div>
+                <div class="content">
+                    <div class="blockTitle">Берілгені:</div>
+                    Ауалы мұздатқыш қондырғысында мұздатқыш камерасындағы ауа p = <span class="p1">0.2</span> МПа қысым және t<sub>1</sub> = <span class="t1">-20</span>℃ температураға ие.
+                    Компрессорда p<sub>1</sub> = <span class="p1">0.5</span> МПа қысымға дейін адиабаталық сығылудан кейін ауа салқындатқышқа бағытталады,
+                    мұнда оның температурасы t<sub>3</sub> = <span class="t3">+15</span>℃ дейін төмендейді. Турбодетандерде бастапқы қысымға дейін ауаның адиабаталық ұлғаюы жүреді.
+                     Мұздатқыш камерасында ауа t <sub>1</sub> = <span class="p1">-20</span>℃ температураға дейін қыздырылады және кейін қайтадан
+                    компрессорға келіп түседі (1 және 2 сурет).
+                    <img src="assets/img/graph.png" class="dp" alt="">
+
+                    <p class="primechanie">* Ответ округляется до десятых (Пример: 2.9)</p>
+                    <form action="" class="userForms col s8" id="userForms">
+                        <div class="input-field clearB user_input_field active">
+                            <img src="assets/img/formula1.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput1" name="userInput1" type="text" class="validate">
+                                <label for="userInput1">Мұздатқыш камерасына келіп түсетін ауа температурасы: (K)</label>
+                            </div>
+                            <img src="assets/img/formula2.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput2" name="userInput2" type="text" class="validate">
+                                <label for="userInput2">Компрессордан шығатын ауа температурасы: (K)</label>
+                            </div>
+                        </div>
+                        <div class="input-field clearB user_input_field">
+                            <img src="assets/img/formula3.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput3" name="userInput3" type="text" class="validate">
+                                <label for="userInput3">Компрессорда жұмсалған меншікті жұмысы: (кДж/кг)</label>
+                            </div>
+                            <img src="assets/img/formula4.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput4" name="userInput4" type="text" class="validate">
+                                <label for="userInput4">Турбодетандердегі меншікті жұмысы: (кДж/кг)</label>
+                            </div>
+                            <img src="assets/img/formula5.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput5" name="userInput5" type="text" class="validate">
+                                <label for="userInput5">Цикл жұмысы: (кДж/кг)</label>
+                            </div>
+                        </div>
+                        <div class="input-field clearB user_input_field">
+                            <img src="assets/img/formula6.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput6" name="userInput6" type="text" class="validate">
+                                <label for="userInput6">Ауаның меншікті суық өнімділігі: (кДж/кг)</label>
+                            </div>
+                            <img src="assets/img/formula7.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput7" name="userInput7" type="text" class="validate">
+                                <label for="userInput7">Қондырғының мұздатқыш коэффициенті: </label>
+                            </div>
+                            <img src="assets/img/formula8.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput8" name="userInput8" type="text" class="validate">
+                                <label for="userInput8">Жұмыс жасайтын қондырғының мұздатқыш коэффициенті: </label>
+                            </div>
+                        </div>
+                        <div class="input-field actionButtons clearB">
+                            <button class="waves-effect deep-orange darken-1 btn" type="button" id="generateRandom">Генерировать</button>
+                            <button class="waves-effect waves-light btn right green darken-1" type="submit">Тексеру</button>
+                        </div>
+                        <div class="input-field actionButtons clearB">
+                            <button class="waves-effect waves-light btn yellow darken-2 left" type="button" id="show_solution">Шығарылуы</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="answers clearB" id="solution">
+                    <div class="content">
+                        <div class="blockTitle">
+                            Шығарылуы:
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Мұздатқыш камерасына келіп түсетін ауа температурасын 3-4 адиабаталық процессінен анықтаймыз.
+                                <br>
+                                <span class="ktemp4">221.7</span> K
+                            </p>
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Компрессордан шығатын ауа температурасын 1-2 адиабатты процесстен анықтаймыз.
+                                <br>
+                                <span class="ktemp2">328.8</span> K
+                            </p>
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Компрессорда жұмсалған меншікті жұмыс
+                                <br>
+                                <span class="ik">76.7</span> кДж/кг
+                            </p>
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Турбодетандердегі меншікті жұмыс мынаған тең
+                                <br>
+                                <span class="itd">67.1</span> кДж/кг
+                            </p>
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Цикл жұмысы
+                                <br>
+                                <span class="i0">9.6</span> кДж/кг
+                            </p>
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Ауаның меншікті суық өнімділігі мына формуламен анықталады
+                                <br>
+                                <span class="q2">31.7</span> кДж/кг
+                            </p>
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Қондырғының мұздатқыш коэффициенті
+                                <br>
+                                <span class="e">3.3</span> кДж/кг
+                            </p>
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Қондырғының мұздатқыш коэффициенті
+                                <br>
+                                <span class="ek">7.2</span> кДж/кг
+                            </p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../js/tasks/jquery-3.3.1.min.js"></script>
+    <script src="../../../js/tasks/materialize.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

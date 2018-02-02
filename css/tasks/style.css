@@ -81,3 +81,7 @@ input.wrong{
 .italic{
 	font-style: italic;
 }
+
+.dp{
+	display: block;
+}
