@@ -38,13 +38,13 @@ $(document).ready(function() {
         temp1 = 20 + Math.floor(Math.random() * 100);
         ktemp1 = temp1 + 273;
 
-        p1 = Math.round(((Math.random() * 0.5) + 0.1 ) * 100) / 100; 
-        p2 = Math.round(((Math.random() * 1.5) + 0.6 ) * 100) / 100; 
+        p1 = Math.round(((Math.random() * 0.5) + 0.1 ) * 100) / 100;
+        p2 = Math.round(((Math.random() * 1.5) + 0.6 ) * 100) / 100;
         k = 1.4;
-        
+
         ktemp2 = Math.round(ktemp1 * Math.pow((p2/p1), ((k-1)/k)) * 100 ) / 100;
         v = Math.round((r * ktemp2)/(p2 * 1000000) * 100) / 100;
-        w = Math.round(((r / (k-1) * (ktemp1 - ktemp2))/1000) * 100) / 100; 
+        w = Math.round(((r / (k-1) * (ktemp1 - ktemp2))/1000) * 100) / 100;
 
         console.log(ktemp2, v, w);
 
