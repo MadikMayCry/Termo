@@ -35,6 +35,7 @@ input.wrong{
 .esepTitle{
 	font-size: 26px;
 	text-align: center;
+	text-transform: capitalize;
 }
 
 .blockTitle{

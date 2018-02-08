@@ -13,43 +13,46 @@
         <div class="row">
             <div class="contentWrapper">
                 <div class="esepTitle">
-                    Асқын және сиретілген қысымдарды өлшеу үшін микроманометр қолданылады.
+                    ішкі энергияны есептеңіз.
                 </div>
                 <div class="content">
                     <div class="blockTitle">Берілгені:</div>
                     <p>
-                        Прибордың арнайы сүлбесі 1.1-суретте көрсетілген.
-                    </p>
-                    <img src="assets/img/graph.png" alt="">
-                    <p>
-                        Егер α = 30° бұрышқа иілген 2-микроманометр түтікшесіндегі сұйық бағанының ұзындығы l = 180мм тең болса,
-                        <br> 1-ауа өткізгішіндегі абсолюттік қысымды анықтау керек.
-                   </p>
-                    <p>
-                        Жұмысшы сұйық –спирт, тығыздығы: ρ = 0.8 г/см<sup>3</sup>
-                        <br>
-                        Барометр көрсеткіші: 0.1020МПа.
+                        Егер сыртқы қысым тұрақты болса, бөлме ішіндегі ауаның ішкі энергиясы температурадан тәуелсіз екендігін көрсетіңіз.
+                        <br> Бөлме көлемі V = <span class="bigV">40</span> м<sup>3</sup>, қысымы атмосфералық қысымға тең болған жағдайдағы U ішкі энергияны есептеңіз.
                     </p>
                     <p>
-                    Қысымды МПа, мм.сын.бағ., кгс/cм<sup>2</sup> өлшем бірліктерінде өрнектеңіз.
+                        <span class="italic">
+                            p = const, V = const
+                        </span>
                     </p>
+                    <p>
+                        <span class="italic">
+                            V = <span class="bigV">40</span> м<sup>3</sup>, p = <span class="p">0.1</span> МПа, γ<sub>ауа</sub> = 1.4
+                        </span>
+                    </p>
+                    <p class="italic">Т/к: U = ? </p>
+                    <p>Идеал газдың ішкі энергиясы:</p>
+                    <img src="assets/img/formula1.png" alt="">
+                    <p>Адиабата көрсеткіші:</p>
+                    <img src="assets/img/formula2.png" alt="">
+                    <p>Менделеев-Клапейрон теңдеуі:</p>
+                    <img src="assets/img/formula3.png" alt="">
                     <p class="primechanie">*Ответ округляется до сотых (Өрнек: 2.94)</p>
                     <form action="" class="userForms col s6" id="userForms">
-                        <div class="input-field clearB active user_input_field">
-                            <input id="userInput1" name="userInput1" type="text" class="validate">
-                            <label for="userInput1">Қысым (МПа)</label>
-                        </div>
-                        <div class="input-field clearB user_input_field">
-                            <input id="userInput2" type="text" class="validate">
-                            <label for="userInput2">Қысым (мм.сын.бағ.)</label>
-                        </div>
-                        <div class="input-field clearB user_input_field">
-                            <input id="userInput3" type="text" class="validate">
-                            <label for="userInput3">Қысым (кгс/см^2)</label>
+                        <div class="input-field clearB user_input_field active">
+
+                            <div class="input-field">
+                                <input id="userInput1" name="userInput1" type="text" class="validate">
+                                <label for="userInput1">Ішкі энергия ( * 10<sup>6</sup> Дж)</label>
+                            </div>
                         </div>
                         <div class="input-field actionButtons clearB">
+                            <button class="waves-effect deep-orange darken-1 btn" type="button" id="generateRandom">Генерировать</button>
                             <button class="waves-effect waves-light btn right green darken-1" type="submit">Тексеру</button>
-                            <button class="waves-effect waves-light btn left yellow darken-2" type="button" id="show_solution">Шығарылуы</button>
+                        </div>
+                        <div class="input-field actionButtons clearB">
+                            <button class="waves-effect waves-light btn yellow darken-2 left" type="button" id="show_solution">Шығарылуы</button>
                         </div>
                     </form>
                 </div>
@@ -59,9 +62,12 @@
                             Шығарылуы:
                         </div>
                         <div class="steps">
-                            <span class="solutionText">
-                                p<sub>abc</sub> = 0.1027 МПа = 770 мм.сын. бағ. = 1.047 кгс/см<sup>2</sup>
-                            </span>
+                            <img src="assets/img/formula4.png" alt="">
+                            <p>
+                                <span class="solutionText">
+                                    U = <span class="p">0.1</span> * <span class="u">40</span> / (1.4 - 1) = <span class="u">10</span> * 10 <sup>6</sup>
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </div>
