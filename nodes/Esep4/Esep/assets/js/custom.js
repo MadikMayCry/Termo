@@ -1,6 +1,10 @@
 $(document).ready(function() {
     var randomVals = [2, 2.5, 5],
-        rand, vx, ix, px, sx;
+        rand, vx = 0.0799,
+        ix = 2420.744,
+        px = 12.51564,
+        sx = 9.56809,
+        th, r, v1, v2, i1, i2, s1, s2, x = 0.8;
     $("#userForms").submit(function(event) {
         //Variables
         event.preventDefault();
@@ -47,17 +51,49 @@ $(document).ready(function() {
         switch (p) {
             case 2:
                 console.log("random is 2");
+                th = 212.42;
+                r = 1890.03;
+                v1 = 0.001177;
+                v2 = 0.09958;
+                i1 = 908.72;
+                i2 = 2798.75;
+                s1 = 2.45;
+                s2 = 6.34;
 
                 break;
             case 2.5:
                 console.log("random is 2.5");
+                th = 223.99;
+                r = 1840.23;
+                v1 = 0.011974;
+                v2 = 0.07994;
+                i1 = 962.007;
+                i2 = 2802.24;
+                s1 = 2.55;
+                s2 = 6.25;
 
                 break;
+
             case 5:
                 console.log("random is 5");
+                th = 263.98;
+                r = 1639.54;
+                v1 = 0.001286;
+                v2 = 0.03945;
+                i1 = 1154.23;
+                i2 = 2793.77;
+                s1 = 2.92;
+                s2 = 5.97;
 
                 break;
+            default:
+                break;
         }
+
+        vx = Math.round(((v1 * (1 - x)) + v2 * x) * 100000) / 100000;
+        ix = Math.round((i1 + r * x) * 100000) / 100000;
+        px = Math.round(1 / vx * 100000) / 100000;
+        sx = Math.round((s1 + (r * x) / th) * 100000) / 100000;
 
 
         initalize();
@@ -65,6 +101,22 @@ $(document).ready(function() {
 
     function initalize() {
         $(".p").html(p);
+        $(".th").html(th);
+        $(".r").html(r);
+        $(".v1").html(v1);
+        $(".v2").html(v2);
+        $(".i1").html(i1);
+        $(".i2").html(i2);
+        $(".s1").html(s1);
+        $(".s2").html(s2);
+
+
+        $(".vx").html(vx);
+        $(".ix").html(ix);
+        $(".px").html(px);
+        $(".sx").html(sx);
+
+        console.log(vx, ix, px, sx);
     }
 
     function wrongInput(argument) {

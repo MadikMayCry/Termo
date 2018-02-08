@@ -1,92 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Esep 7</title>
-        <link rel="stylesheet" href="../../../css/tasks/materialize.min.css">
-        <link rel="stylesheet" href="../../../css/tasks/style.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="contentWrapper">
-                    <div class="esepTitle">
-                        Компрессордағы сығылудың теориялық жұмысын және сығылған метанның көлемін және температурасын анықтаңыз.
-                    </div>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Esep 7</title>
+    <link rel="stylesheet" href="../../../css/tasks/materialize.min.css">
+    <link rel="stylesheet" href="../../../css/tasks/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="contentWrapper">
+                <div class="esepTitle">
+                    Компрессордағы сығылудың теориялық жұмысын және сығылған метанның көлемін және температурасын анықтаңыз.
+                </div>
+                <div class="content">
+                    <div class="blockTitle">Берілгені:</div>
+                    <p>
+                        Идеалды бір сатылы компрессор p<sub>1</sub> = <span class="p1">0.1</span>МПа
+                    </p>
+                    <p>
+                        t<sub>1</sub> = <span class="temp1">17</span> &#x2103; кезінде <span class="volume1">200</span> м3/сағ метанды сорып алады
+                    </p>
+                    <p>
+                        p<sub>2</sub> = <span class="p2">0.7</span>МПа қысымға дейін политропты (n=1.2) сығады.
+                    </p>
+                    <p class="primechanie">*Жауаптар жүздікке дейін жуықталады (Мысал: 2.94)</p>
+
+                    <form action="" class="userForms" id="userForms">
+                        <div class="input-field col s6 clearB user_input_field active">
+                            <img src="assets/img/formula1.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput1" name="userInput1" type="text" class="validate">
+                                <label for="userInput1">Температура (К)</label>
+                            </div>
+                        </div>
+                        <div class="input-field col s6 clearB user_input_field">
+                            <img src="assets/img/formula2.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput2" name="userInput2" type="text" class="validate">
+                                <label for="userInput2">Соңғы көлем(м<sup>3</sup>)</label>
+                            </div>
+                        </div>
+                        <div class="input-field col s6 clearB user_input_field">
+                            <img src="assets/img/formula3.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput3" name="userInput3" type="text" class="validate">
+                                <label for="userInput3">Атқарылған жұмыс( * 10<sup>5</sup> Дж*са)</label>
+                            </div>
+                        </div>
+                        <div class="input-field actionButtons clearB">
+                            <button class="waves-effect deep-orange darken-1 btn" type="button" id="generateRandom">Генерировать</button>
+                            <button class="waves-effect waves-light btn right green darken-1" type="submit">Тексеру</button>
+                        </div>
+                        <div class="input-field actionButtons clearB">
+                            <button class="waves-effect waves-light btn yellow darken-2 left" type="button" id="show_solution">Шығарылуы</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="answers clearB" id="solution">
                     <div class="content">
-                        <div class="blockTitle">Берілгені:</div>
-                        <p>
-                            Идеалды бір сатылы компрессор p<sub>1</sub> = <span class="p1">0.1</span>МПа
-                        </p>
-                        <p>
-                            t<sub>1</sub> = <span class="temp1">17</span> &#x2103; кезінде <span class="volume1">200</span> м3/сағ метанды сорып алады
-                        </p>
-                        <p>
-                            p<sub>2</sub> = <span class="p2">0.7</span>МПа қысымға дейін политропты (n=1.2) сығады.
-                        </p>
-                        
-                        <p class="primechanie">* Ответ округляется до сотых (Пример: 2.94)</p>
-                        <form action="" class="userForms" id="userForms">
-                            <div class="input-field col s6 clearB user_input_field active">
-                                <img src="assets/img/formula1.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput1" name="userInput1" type="text" class="validate">
-                                    <label for="userInput1">Температура (К)</label>
-                                </div>
-                            </div>
-                            <div class="input-field col s6 clearB user_input_field">
-                                <img src="assets/img/formula2.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput2" name="userInput2" type="text" class="validate">
-                                    <label for="userInput2">Соңғы көлем(м<sup>3</sup>)</label>
-                                </div>
-                            </div>
-                            <div class="input-field col s6 clearB user_input_field">
-                                <img src="assets/img/formula3.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput3" name="userInput3" type="text" class="validate">
-                                    <label for="userInput3">Атқарылған жұмыс( * 10<sup>5</sup> Дж*са)</label>
-                                </div>
-                            </div>
-                            <div class="input-field actionButtons clearB">
-                                <button class="waves-effect deep-orange darken-1 btn" type="button" id="generateRandom">Генерировать</button>
-                                <button class="waves-effect waves-light btn right green darken-1" type="submit">Тексеру</button>
-                            </div>
-                            <div class="input-field actionButtons clearB">
-                                <button class="waves-effect waves-light btn yellow darken-2 left" type="button" id="show_solution">Шығарылуы</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="answers clearB" id="solution">
-                        <div class="content">
-                            <div class="blockTitle">
-                                Шығарылуы:
-                            </div>
-                            <div class="steps">
-                                <p>Соңғы температура:</p>
-                                <span class="solutionText">
+                        <div class="blockTitle">
+                            Шығарылуы:
+                        </div>
+                        <div class="steps">
+                            <p>Соңғы температура:</p>
+                            <span class="solutionText">
                                     <span class="ktemp2">401.09</span> K
-                                </span>
-                            </div>
-                            <div class="steps">
-                                <p>Сығылған метанның көлемі:</p>
-                                <span class="solutionText">
+                            </span>
+                        </div>
+                        <div class="steps">
+                            <p>Сығылған метанның көлемі:</p>
+                            <span class="solutionText">
                                     <span class="volume">39.6</span> м<sup>3</sup>
-                                </span>
-                            </div>
-                            <div class="steps">
-                                <p>Компрессордың теориялық жұмысы:</p>
-                                <span class="solutionText">
+                            </span>
+                        </div>
+                        <div class="steps">
+                            <p>Компрессордың теориялық жұмысы:</p>
+                            <span class="solutionText">
                                     <span class="work">456</span> * 10<sup>5</sup> Дж * са
-                                </span>
-                            </div>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="../../../js/tasks/jquery-3.3.1.min.js"></script>
-        <script src="../../../js/tasks/materialize.min.js"></script>
-        <script src="assets/js/custom.js"></script>
-    </body>
+    </div>
+    <script src="../../../js/tasks/jquery-3.3.1.min.js"></script>
+    <script src="../../../js/tasks/materialize.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
 </html>
