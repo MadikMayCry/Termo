@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    var temp1, temp2, ktemp1, ktemp2 = 585, p1, p2, k, v, r = 287, w;
+    var randomVals = [2, 2.5, 5],
+        rand, vx, ix, px, sx;
     $("#userForms").submit(function(event) {
         //Variables
         event.preventDefault();
@@ -12,7 +13,12 @@ $(document).ready(function() {
                 var input = $(this);
                 var inputId = input.attr("id");
                 var inputVal = input.val();
-                var values = { "userInput1": ktemp2, "userInput2": v, "userInput3": w };
+                var values = {
+                    "userInput1": vx,
+                    "userInput2": ix,
+                    "userInput3": px,
+                    "userInput4": sx,
+                };
 
                 $.each(values, function(key, value) {
                     if ((inputId == key) && (inputVal == value)) {
@@ -35,32 +41,30 @@ $(document).ready(function() {
     $("#generateRandom").click(generateRandom);
 
     function generateRandom() {
-        temp1 = 20 + Math.floor(Math.random() * 100);
-        ktemp1 = temp1 + 273;
+        p = randomVals[Math.floor(Math.random() * randomVals.length)];
+        console.log(p);
 
-        p1 = Math.round(((Math.random() * 0.5) + 0.1 ) * 100) / 100; 
-        p2 = Math.round(((Math.random() * 1.5) + 0.6 ) * 100) / 100; 
-        k = 1.4;
-        
-        ktemp2 = Math.round(ktemp1 * Math.pow((p2/p1), ((k-1)/k)) * 100 ) / 100;
-        v = Math.round((r * ktemp2)/(p2 * 1000000) * 100) / 100;
-        w = Math.round(((r / (k-1) * (ktemp1 - ktemp2))/1000) * 100) / 100; 
+        switch (p) {
+            case 2:
+                console.log("random is 2");
 
-        console.log(ktemp2, v, w);
+                break;
+            case 2.5:
+                console.log("random is 2.5");
+
+                break;
+            case 5:
+                console.log("random is 5");
+
+                break;
+        }
+
 
         initalize();
-
     }
 
     function initalize() {
-        $(".temp1").html(temp1);
-        $(".ktemp1").html(ktemp1);
-        $(".p1").html(p1);
-        $(".p2").html(p2);
-
-        $(".ktemp2").html(ktemp2);
-        $(".v").html(v);
-        $(".w").html(w);
+        $(".p").html(p);
     }
 
     function wrongInput(argument) {
@@ -84,6 +88,4 @@ $(document).ready(function() {
         }, 1000);
     }
 
-    generateRandom();
-    initalize();
 });
