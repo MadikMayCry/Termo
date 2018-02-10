@@ -1,5 +1,11 @@
 $(document).ready(function() {
-    var temp1, temp2, ktemp1, ktemp2 = 585, p1, p2, k, v, r = 287, w;
+
+    var randomVals = [2, 2.5, 5],
+        rand, vx = 0.0799,
+        ix = 2420.744,
+        px = 12.51564,
+        sx = 9.56809,
+        th, r, v1, v2, i1, i2, s1, s2, x = 0.8;
     $("#userForms").submit(function(event) {
         //Variables
         event.preventDefault();
@@ -12,7 +18,12 @@ $(document).ready(function() {
                 var input = $(this);
                 var inputId = input.attr("id");
                 var inputVal = input.val();
-                var values = { "userInput1": ktemp2, "userInput2": v, "userInput3": w };
+                var values = {
+                    "userInput1": vx,
+                    "userInput2": ix,
+                    "userInput3": px,
+                    "userInput4": sx,
+                };
 
                 $.each(values, function(key, value) {
                     if ((inputId == key) && (inputVal == value)) {
@@ -35,32 +46,78 @@ $(document).ready(function() {
     $("#generateRandom").click(generateRandom);
 
     function generateRandom() {
-        temp1 = 20 + Math.floor(Math.random() * 100);
-        ktemp1 = temp1 + 273;
+        p = randomVals[Math.floor(Math.random() * randomVals.length)];
+        console.log(p);
 
-        p1 = Math.round(((Math.random() * 0.5) + 0.1 ) * 100) / 100; 
-        p2 = Math.round(((Math.random() * 1.5) + 0.6 ) * 100) / 100; 
-        k = 1.4;
-        
-        ktemp2 = Math.round(ktemp1 * Math.pow((p2/p1), ((k-1)/k)) * 100 ) / 100;
-        v = Math.round((r * ktemp2)/(p2 * 1000000) * 100) / 100;
-        w = Math.round(((r / (k-1) * (ktemp1 - ktemp2))/1000) * 100) / 100; 
+        switch (p) {
+            case 2:
+                console.log("random is 2");
+                th = 212.42;
+                r = 1890.03;
+                v1 = 0.001177;
+                v2 = 0.09958;
+                i1 = 908.72;
+                i2 = 2798.75;
+                s1 = 2.45;
+                s2 = 6.34;
 
-        console.log(ktemp2, v, w);
+                break;
+            case 2.5:
+                console.log("random is 2.5");
+                th = 223.99;
+                r = 1840.23;
+                v1 = 0.011974;
+                v2 = 0.07994;
+                i1 = 962.007;
+                i2 = 2802.24;
+                s1 = 2.55;
+                s2 = 6.25;
+
+                break;
+
+            case 5:
+                console.log("random is 5");
+                th = 263.98;
+                r = 1639.54;
+                v1 = 0.001286;
+                v2 = 0.03945;
+                i1 = 1154.23;
+                i2 = 2793.77;
+                s1 = 2.92;
+                s2 = 5.97;
+
+                break;
+            default:
+                break;
+        }
+
+        vx = Math.round(((v1 * (1 - x)) + v2 * x) * 100000) / 100000;
+        ix = Math.round((i1 + r * x) * 100000) / 100000;
+        px = Math.round(1 / vx * 100000) / 100000;
+        sx = Math.round((s1 + (r * x) / th) * 100000) / 100000;
+
 
         initalize();
-
     }
 
     function initalize() {
-        $(".temp1").html(temp1);
-        $(".ktemp1").html(ktemp1);
-        $(".p1").html(p1);
-        $(".p2").html(p2);
+        $(".p").html(p);
+        $(".th").html(th);
+        $(".r").html(r);
+        $(".v1").html(v1);
+        $(".v2").html(v2);
+        $(".i1").html(i1);
+        $(".i2").html(i2);
+        $(".s1").html(s1);
+        $(".s2").html(s2);
 
-        $(".ktemp2").html(ktemp2);
-        $(".v").html(v);
-        $(".w").html(w);
+
+        $(".vx").html(vx);
+        $(".ix").html(ix);
+        $(".px").html(px);
+        $(".sx").html(sx);
+
+        console.log(vx, ix, px, sx);
     }
 
     function wrongInput(argument) {
@@ -84,6 +141,4 @@ $(document).ready(function() {
         }, 1000);
     }
 
-    generateRandom();
-    initalize();
 });
