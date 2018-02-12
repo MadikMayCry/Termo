@@ -9,6 +9,9 @@ $(document).ready(function() {
         r = 26.5,
         g = 9.81,
         f = 20 * Math.pow(10, -6),
+        c2 = 722.7903,
+        v1 = 0.0165,
+        G = 0.2557,
         beta;
 
     var allCorrect = false;
@@ -31,7 +34,9 @@ $(document).ready(function() {
                 var inputId = input.attr("id");
                 var inputVal = input.val();
                 var values = {
-                    "userInput1": vx
+                    "userInput1": c2,
+                    "userInput2": v1,
+                    "userInput3": G
                 };
 
                 $.each(values, function(key, value) {
@@ -63,25 +68,24 @@ $(document).ready(function() {
 
     $("#generateRandom").click(generateRandom);
 
-    function randomKey(obj) {
-        var c = 0;
-        for (var key in obj) {
-            if (Math.random() < 1 / ++c)
-                ret = key;
-        }
-        return ret;
-    }
 
     function generateRandom() {
+
+
+        t1 = Math.floor(Math.random() * 150);
+        p1 = Math.round(Math.floor(Math.random() * 40) + 40);
+        p2 = Math.round(Math.floor(Math.random() * 15) + 25);
+
+        console.log(t1, p1, p2);
         beta = Math.round(p1 / p2 * 100) / 100;
         ktemp1 = t1 + 273;
-        c2 = Math.sqrt(2 * g * k / (k - 1) * r * ktemp1 * Math.pow(1 - (p2 / p1), (k - 1) / k));
+        c2 = Math.round(Math.sqrt(2 * g * k / (k - 1) * r * ktemp1 * Math.pow(1 - (p2 / p1), (k - 1) / k)) * 10000) / 10000;
         nextp1 = p1 * Math.pow(10, 4);
 
-        v1 = r * ktemp1 / (nextp1);
-        G = f * Math.sqrt(2 * g * k / (k - 1) * (nextp1 / v1) * (Math.pow((p2 / p1), 2 / k) - Math.pow((p2 / p1), (k + 1) / k)));
-        console.log(c2, v1, G);
 
+        v1 = Math.round(r * ktemp1 / (nextp1) * 10000) / 10000;
+        G = Math.round(f * Math.sqrt(2 * g * k / (k - 1) * (nextp1 / v1) * (Math.pow((p2 / p1), 2 / k) - Math.pow((p2 / p1), (k + 1) / k))) * 10000) / 10000;
+        console.log("T1 = " + ktemp1, c2, v1, G);
 
 
         initalize();
