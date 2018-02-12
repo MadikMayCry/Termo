@@ -146,11 +146,22 @@ $(document).ready(function() {
         $(".v22").html(v22);
         $(".qt").html(qt);
 
+        $(".r1").html(r1);
+        $(".r2").html(r2);
+        $(".v11").html(v11);
+        $(".v12").html(v12);
+        $(".v21").html(v21);
+        $(".v22").html(v22);
 
         $(".i11").html(i11);
         $(".i12").html(i12);
         $(".i21").html(i21);
         $(".i22").html(i22);
+
+        $(".s11").html(s11);
+        $(".s12").html(s12);
+        $(".s21").html(s21);
+        $(".s22").html(s22);
 
         //answers
         $(".vx").html(vx);

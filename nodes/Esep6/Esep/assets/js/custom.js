@@ -1,7 +1,25 @@
 $(document).ready(function() {
-    var temp1, temp2, ktemp1, ktemp2 = 585, p1, p2, k, v, r = 287, w;
+
+    //Variables
+    var
+        p1 = 60,
+        p2 = 36,
+        t1 = 100,
+        k = 1.4,
+        r = 26.5,
+        g = 9.81,
+        f = 20 * Math.pow(10, -6),
+        beta;
+
+    var allCorrect = false;
+    var correctCount = 0;
+    var correctArrays = [];
+
     $("#userForms").submit(function(event) {
-        //Variables
+        //Active inputs length
+        correctArrays = new Array($('.user_input_field.active input[type="text"]').length);
+        correctArrays.fill(0);
+
         event.preventDefault();
         var isValid = true;
         $('.user_input_field.active input[type="text"]').each(function() {
@@ -12,18 +30,29 @@ $(document).ready(function() {
                 var input = $(this);
                 var inputId = input.attr("id");
                 var inputVal = input.val();
-                var values = { "userInput1": ktemp2, "userInput2": v, "userInput3": w };
+                var values = {
+                    "userInput1": vx
+                };
 
                 $.each(values, function(key, value) {
                     if ((inputId == key) && (inputVal == value)) {
                         correctInput(input);
+                        correctArrays[correctCount] = 1;
+                        if (correctArrays.every(allCorrectCheck)) {
+                            console.log("all correct");
+                            $(input).parent().parent().next(".user_input_field").slideDown().addClass("active");
+                        }
                         return false;
                     } else {
                         wrongInput(input);
+                        correctArrays[correctCount] = 0;
                     }
                 });
+                correctCount++;
             }
         });
+        console.log(correctArrays.toString());
+        correctCount = 0;
 
         if (!isValid) {
             Materialize.toast('Неверный ввод данных', 4000);
@@ -34,33 +63,56 @@ $(document).ready(function() {
 
     $("#generateRandom").click(generateRandom);
 
+    function randomKey(obj) {
+        var c = 0;
+        for (var key in obj) {
+            if (Math.random() < 1 / ++c)
+                ret = key;
+        }
+        return ret;
+    }
+
     function generateRandom() {
-        temp1 = 20 + Math.floor(Math.random() * 100);
-        ktemp1 = temp1 + 273;
+        beta = Math.round(p1 / p2 * 100) / 100;
+        ktemp1 = t1 + 273;
+        c2 = Math.sqrt(2 * g * k / (k - 1) * r * ktemp1 * Math.pow(1 - (p2 / p1), (k - 1) / k));
+        nextp1 = p1 * Math.pow(10, 4);
 
-        p1 = Math.round(((Math.random() * 0.5) + 0.1 ) * 100) / 100; 
-        p2 = Math.round(((Math.random() * 1.5) + 0.6 ) * 100) / 100; 
-        k = 1.4;
-        
-        ktemp2 = Math.round(ktemp1 * Math.pow((p2/p1), ((k-1)/k)) * 100 ) / 100;
-        v = Math.round((r * ktemp2)/(p2 * 1000000) * 100) / 100;
-        w = Math.round(((r / (k-1) * (ktemp1 - ktemp2))/1000) * 100) / 100; 
+        v1 = r * ktemp1 / (nextp1);
+        G = f * Math.sqrt(2 * g * k / (k - 1) * (nextp1 / v1) * (Math.pow((p2 / p1), 2 / k) - Math.pow((p2 / p1), (k + 1) / k)));
+        console.log(c2, v1, G);
 
-        console.log(ktemp2, v, w);
+
 
         initalize();
-
     }
 
     function initalize() {
-        $(".temp1").html(temp1);
-        $(".ktemp1").html(ktemp1);
-        $(".p1").html(p1);
-        $(".p2").html(p2);
+        // $(".p1").html(p1);
+        // $(".p2").html(p2);
+        // $(".r1").html(r1);
+        // $(".r2").html(r2);
+        // $(".v11").html(v11);
+        // $(".v12").html(v12);
+        //
+        // $(".v21").html(v21);
+        // $(".v22").html(v22);
+        // $(".qt").html(qt);
+        //
+        //
+        // $(".i11").html(i11);
+        // $(".i12").html(i12);
+        // $(".i21").html(i21);
+        // $(".i22").html(i22);
+        //
+        // //answers
+        // $(".vx").html(vx);
+        // $(".x2").html(x2);
+        // $(".i1").html(i1);
+        // $(".i2").html(i2);
+        // $(".qv").html(qv);
+        // $(".time").html(time);
 
-        $(".ktemp2").html(ktemp2);
-        $(".v").html(v);
-        $(".w").html(w);
     }
 
     function wrongInput(argument) {
@@ -74,16 +126,17 @@ $(document).ready(function() {
     function correctInput(argument) {
         $(argument).removeClass("wrong");
         $(argument).addClass("correct");
-        $(argument).parent().parent().next(".user_input_field").slideDown().addClass("active");
     }
 
     function show_answers(argument) {
         $(".answers").slideDown();
         $('html, body').animate({
             scrollTop: $("#solution").offset().top
-        }, 1000);
+        });
     }
 
-    generateRandom();
-    initalize();
+    function allCorrectCheck(argument) {
+        return argument == 1;
+    }
+
 });
