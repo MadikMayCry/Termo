@@ -13,34 +13,53 @@
         <div class="row">
             <div class="contentWrapper">
                 <div class="esepTitle">
-                    жабық вентильдерде қысымды 1 МПа дейін көтеру үшін қанша уақыт қажет?
+                    жабық вентильдерде қысымды <span class="p2">1</span> МПа дейін көтеру үшін қанша уақыт қажет?
                 </div>
                 <div class="content">
                     <div class="blockTitle">Берілгені:</div>
                     <p>
-                        Бу қазандығында 0,4 МПа қысымда 8250 кг массада бу-су қоспасы бар, оның құрамындағы бу мөлшері x=0,0015. Егер бу-су қоспасына 18 МДж/мин жылу берілсе, жабық вентильдерде қысымды 1 МПа дейін көтеру үшін қанша уақыт қажет?
+                        Бу қазандығында <span class="p1">0.4</span> МПа қысымда <span class="m">8250</span> кг массада бу-су қоспасы бар, оның құрамындағы бу мөлшері x = <span class="x">0.0015</span>. Егер бу-су қоспасына <span class="qt">18</span> МДж/мин
+                        жылу берілсе, жабық вентильдерде қысымды <span class="p2">1</span> МПа дейін көтеру үшін қанша уақыт қажет?
                     </p>
-                    <p class="primechanie">*Жауаптар жүздікке дейін жуықталады (Мысал: 2.94)</p>
-                    <form action="" class="userForms" id="userForms">
-                        <div class="input-field col s6 clearB user_input_field active">
+                    <p class="primechanie">*Жауаптар он мындықа дейін жуықталады (Мысал: 2.94123)</p>
+                    <form action="" class="userForms col s6" id="userForms">
+                        <div class="input-field clearB user_input_field active">
                             <img src="assets/img/formula1.png" alt="">
                             <div class="input-field">
                                 <input id="userInput1" name="userInput1" type="text" class="validate">
-                                <label for="userInput1">Температура (К)</label>
+                                <label for="userInput1">Бу-су қоспасының меншікті көлемі  (м<sup>3</sup>/кг)</label>
                             </div>
                         </div>
-                        <div class="input-field col s6 clearB user_input_field">
+                        <div class="input-field clearB user_input_field">
                             <img src="assets/img/formula2.png" alt="">
                             <div class="input-field">
                                 <input id="userInput2" name="userInput2" type="text" class="validate">
-                                <label for="userInput2">Соңғы көлем(м^2/кг)</label>
+                                <label for="userInput2">Процесс соңындағы қалған бу мөлшері </label>
                             </div>
                         </div>
-                        <div class="input-field col s6 clearB user_input_field">
+                        <div class="input-field clearB user_input_field">
                             <img src="assets/img/formula3.png" alt="">
                             <div class="input-field">
                                 <input id="userInput3" name="userInput3" type="text" class="validate">
-                                <label for="userInput3">Атқарылған жұмыс(кДж/кг)</label>
+                                <label for="userInput3">Будың бастапқы күйіндегі энтальпия(кДж/кг)</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="userInput4" name="userInput4" type="text" class="validate">
+                                <label for="userInput4">Будың соңғы күйіндегі энтальпия (кДж/кг)</label>
+                            </div>
+                        </div>
+                        <div class="input-field clearB user_input_field">
+                            <img src="assets/img/formula4.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput5" name="userInput5" type="text" class="validate">
+                                <label for="userInput5">Бу-су қоспасы күйінің өзгерісі (кДж)</label>
+                            </div>
+                        </div>
+                        <div class="input-field clearB user_input_field">
+                            <img src="assets/img/formula5.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput6" name="userInput6" type="text" class="validate">
+                                <label for="userInput6">Қажетті уақыт (мин)</label>
                             </div>
                         </div>
                         <div class="input-field actionButtons clearB">
@@ -58,23 +77,30 @@
                             Шығарылуы:
                         </div>
                         <div class="steps">
-                            <p>Адиабаталық процесстің параметрлер қатынасынан
-                                <spab class="italic">T</spab><sub>2</sub> температурасы анықталады:</p>
-                            <span class="solutionText">
-                                    <span class="ktemp2"></span> K
-                            </span>
+                            <p>
+                                Бу-су қоспасының меншікті көлемі:
+                            </p>
+                            v<sub>x</sub> = <span class="vx">0.0018</span> м<sup>3</sup>/кг
+                            <p>Процесс соңындағы қалған бу мөлшері:</p>
+                            x<sub>2</sub> = <span class="x2">0.0035</span> м<sup>3</sup>/кг
                         </div>
                         <div class="steps">
-                            <p>Соңғы көлем күй теңдеуінен анықталады.</p>
-                            <span class="solutionText">
-                                    <span class="v"></span> м<sup>2</sup>/кг
-                            </span>
+                            <p>Будың бастапқы және соңғы күйлеріндегі энтальпиялары анықталады:</p>
+                            i<sub>1</sub> = <span class="i1">607.9224</span> кДж/кг
+                            <br>
+                            i<sub>2</sub> = <span class="i2">769.6504</span> кДж/кг
                         </div>
                         <div class="steps">
-                            <p>Процессте атқарылған жұмыс</p>
-                            <span class="solutionText">
-                                    <span class="w"></span> кДж/кг
-                            </span>
+                            <p>
+                                Бу-су қоспасы күйінің өзгерісі тұрақты көлемде жүретін болғандықтан, қысымды <span class="p2">1</span> МПа көтеруге қажетті жылу мөлшері келесі формуламен анықталады:
+                            </p>
+                            Q<sub>v</sub> = <span class="qv">1334247.09</span> кДж
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Жабық вентильдерде 1 МПа қысымға дейін көтеруге қажетті уақыт:
+                            </p>
+                            τ = <span class="time">74.1248</span> мин
                         </div>
                     </div>
                 </div>
