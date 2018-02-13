@@ -89,8 +89,6 @@ $(document).ready(function() {
         });
         console.log(correctArrays.toString());
 
-
-
         correctCount = 0;
 
         if (!isValid) {
@@ -99,12 +97,13 @@ $(document).ready(function() {
     });
 
     function generateRandom() {
-        // p1 = Math.round(((Math.random() * 0.5) + 0.1) * 100) / 100;
-        // temp1 = Math.floor(Math.random() * 100) + 100;
-        // lambda = Math.round(((Math.random() * 5.5) + 1.5) * 10) / 10;
-        p1 = 0.1;
-        temp1 = 127;
-        lambda = 3.5;
+        p1 = Math.round(((Math.random() * 0.5) + 0.1) * 100) / 100;
+        temp1 = Math.floor(Math.random() * 100) + 100;
+        lambda = Math.round(((Math.random() * 5.5) + 1.5) * 10) / 10;
+
+        // p1 = 0.1;
+        // temp1 = 127;
+        // lambda = 3.5;
         ktemp1 = temp1 + 273;
 
         //Step 1
@@ -158,16 +157,16 @@ $(document).ready(function() {
 
         $(".q1").html(q1);
         $(".q2").html(q2);
-        $(".q1").html(q0);
+        $(".q0").html(q0);
 
         $(".ut0").html(ut0);
         $(".utkarno").html(utkarno);
 
 
         console.log("Step 1 " + volume1, volume2v, p2, ktemp2);
-        console.log("Step 2 " + volume3, p3, ktemp3);
-        console.log("Step 3 " + volume4, ktemp4, p4);
-        console.log("Step 4 " + q1, q2, q0, ut0, utkarno);
+        console.log("Step 2 " + "volume3 " + volume3, "p3 " + p3, "ktemp3 " + ktemp3);
+        console.log("Step 3 " + "volume4 " + volume4, "ktemp4 " + ktemp4, "p4 " + p4);
+        console.log("Step 4 " + "q1 " + q1, "q2 " + q2, "q0 " + q0, "ut0 " + ut0, "utkarno " + utkarno);
     }
 
     function wrongInput(argument) {
