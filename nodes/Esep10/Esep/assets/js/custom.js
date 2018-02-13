@@ -28,8 +28,8 @@ $(document).ready(function() {
                 var inputId = input.attr("id");
                 var inputVal = input.val();
                 var values = {
-                    "userInput1": ktemp2,
-                    "userInput2": ktemp4,
+                    "userInput1": t2,
+                    "userInput2": t4,
                     "userInput3": nt
                 };
 
@@ -54,8 +54,8 @@ $(document).ready(function() {
     $("#generateRandom").click(generateRandom);
 
     function generateRandom() {
-        t1 = Math.floor(Math.random() * 10) + 10;
-        t3 = Math.floor(Math.random() * 250) + 650;
+        // t1 = Math.floor(Math.random() * 10) + 10;
+        // t3 = Math.floor(Math.random() * 250) + 650;
         p2 = beta;
 
         ktemp1 = t1 + 273;
@@ -74,6 +74,8 @@ $(document).ready(function() {
 
         t5 = Math.round(((t2 - t1) / nkoi + 20) * 100) / 100;
         t6 = Math.round((t3 - ntoi * (t3 - t4)) * 100) / 100;
+        ktemp5 = t5 + 273;
+        ktemp6 = t5 + 273;
 
         ngtki = Math.round(((t3 - t6) - (t5 - t1)) / (t3 - t5) * 100) / 100;
         ntd = Math.round(D * cp * (t3 - t6) * 100) / 100;
@@ -81,7 +83,7 @@ $(document).ready(function() {
 
         ngtud = ntd - nkd;
         console.log(t1,t3);
-        console.log("T_2 = " + ktemp2, "T_4 = " + ktemp4);
+        console.log("t_2 = " + t2, "t_4 = " + t4);
         console.log("nt = " + nt);
         console.log("nt0 = " + nt0, "nk0 = " + nk0, "ngtk0 = " + ngtk0);
         console.log("t5 = " + t5, "t6 = " + t6);
@@ -93,7 +95,7 @@ $(document).ready(function() {
 
     function initalize() {
         $(".t1").html(t1);
-        $(".kt1").html(kt1);
+        $(".t3").html(t3);
         $(".p1").html(p1);
         $(".p2").html(p2);
         $(".volume1").html(volume1);
