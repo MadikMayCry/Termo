@@ -1,91 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Esep 6</title>
-        <link rel="stylesheet" href="../../../css/tasks/materialize.min.css">
-        <link rel="stylesheet" href="../../../css/tasks/style.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="contentWrapper">
-                    <div class="esepTitle">
-                        Резервуарда орналасқан  тарылған сопло арқылы <span class="italic">p</span><sub>1</sub> = <span class="p1">60</span>
-                          кг/см<sup>2</sup> және <span class="italic">t</span><sub>1</sub> = <span class="t1">100</span> &#8451;
-                           тең тұрақты қысым мен температурада оттегі ағады.
-                           Газ ағатын ортаның қысымы <span class="italic">p</span><sub>cp</sub> = <span class="p2">36</span>  кг/см<sup>2</sup> тең.
-                        <br>
-                        Егер шыға берістегі ағыстың ауданы <span class="italic">f</span><sub>2</sub> = 20 мм<sup>2</sup> болса, оттегі шығыны мен ағып шығу  жылдамдығын  анықтаңыз.
 
-                    </div>
-                    <div class="content">
-                        <p>
-                            а) техникалық жүйесімен
-                        </p>
-                        <p>
-                            б) СИ халықаралық өлшеу жүйесін қолдану арқылы есепті жүргіземіз.
-                        </p>
-                        Газ <span class="italic">pv = RT </span>  теңдігіне бағынады, жылусыйымдылық температурадан тәуелді емес. Ағымдағы газ күйінің өзгеру процессі- изоэнтропиялық.
+<head>
+    <meta charset="UTF-8">
+    <title>Esep 6</title>
+    <link rel="stylesheet" href="../../../css/tasks/materialize.min.css">
+    <link rel="stylesheet" href="../../../css/tasks/style.css">
+</head>
 
-                        <p class="primechanie">*Жауаптар жүздікке дейін жуықталады (Мысал: 2.94)</p>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="contentWrapper">
+                <div class="esepTitle">
+                    оттегі шығыны мен ағып шығу жылдамдығын анықтаңыз. <br>а) Техникалық жүйесімен <br> б) СИ халықаралық өлшеу жүйесін қолдану арқылы есепті жүргіземіз.
 
-                        <form action="" class="userForms" id="userForms">
-                            <div class="input-field col s6 clearB user_input_field active">
-                                <img src="assets/img/formula1.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput1" name="userInput1" type="text" class="validate">
-                                    <label for="userInput1">Ағыс жылдамдығы (м/сек)</label>
-                                </div>
-                            </div>
-                            <div class="input-field col s6 clearB user_input_field">
-                                <img src="assets/img/formula2.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput2" name="userInput2" type="text" class="validate">
-                                    <label for="userInput2">Көлем (м<sup>3</sup>/кг)</label>
-                                </div>
-                            </div>
-                            <div class="input-field col s6 clearB user_input_field">
-                                <img src="assets/img/formula3.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput3" name="userInput3" type="text" class="validate">
-                                    <label for="userInput3">Газдың секундтық салмақтық шығыны (кг/сек)</label>
-                                </div>
-                            </div>
-                            <div class="input-field actionButtons clearB">
-                                <button class="waves-effect deep-orange darken-1 btn" type="button" id="generateRandom">Генерировать</button>
-                                <button class="waves-effect waves-light btn right green darken-1" type="submit">Тексеру</button>
-                            </div>
-                            <div class="input-field actionButtons clearB">
-                                <button class="waves-effect waves-light btn yellow darken-2 left" type="button" id="show_solution">Шығарылуы</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="answers clearB" id="solution">
-                        <div class="content">
-                            <div class="blockTitle">
-                                Шығарылуы:
-                            </div>
-                            <div class="steps">
-                                <p>Адиабаталық процесстің параметрлер қатынасынан
-                                <spab class="italic">T</spab><sub>2</sub> температурасы анықталады:</p>
-                                <span class="solutionText">
-                                    <span class="ktemp2"></span> K
-                                </span>
-                            </div>
-                            <div class="steps">
-                                <p>Соңғы көлем күй теңдеуінен анықталады.</p>
-                                <span class="solutionText">
-                                    <span class="v"></span> м<sup>2</sup>/кг
-                                </span>
-                            </div>
-                            <div class="steps">
-                                <p>Процессте атқарылған жұмыс</p>
-                                <span class="solutionText">
-                                    <span class="w"></span> кДж/кг
-                                </span>
+
+                </div>
+                <div class="content">
+                    <div class="blockTitle">Берілгені:</div>
+                    Резервуарда орналасқан тарылған сопло арқылы <span class="italic">p</span><sub>1</sub> = <span class="p1">60</span> кг/см
+                    <sup>2</sup> және <span class="italic">t</span><sub>1</sub> = <span class="t1">100</span> &#8451; тең тұрақты қысым мен температурада оттегі ағады. Газ ағатын ортаның қысымы <span class="italic">p</span><sub>cp</sub> = <span class="p2">36</span>                    кг/см<sup>2</sup> тең.
+                    <br> Егер шыға берістегі ағыстың ауданы <span class="italic f">f</span><sub>2</sub> = 20 мм<sup>2</sup> болса, оттегі шығыны мен ағып шығу жылдамдығын анықтаңыз. Газ <span class="italic">pv = RT </span> теңдігіне бағынады, жылусыйымдылық
+                    температурадан тәуелді емес. Ағымдағы газ күйінің өзгеру процессі- изоэнтропиялық.
+                    <br> k = <span class="k">1.40</span>
+                    <br> β
+                    <sub>кр</sub> = <span class="bkp">0.528</span>
+
+                    <p class="primechanie">*Жауаптар жүздікке дейін жуықталады (Мысал: 2.94)</p>
+
+                    <form action="" class="userForms" id="userForms">
+                        <div class="input-field col s6 clearB user_input_field active">
+                            <img src="assets/img/formula1.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput1" name="userInput1" type="text" class="validate">
+                                <label for="userInput1">Ағыс жылдамдығы (м/сек)</label>
                             </div>
                         </div>
+                        <div class="input-field col s6 clearB user_input_field">
+                            <img src="assets/img/formula2.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput2" name="userInput2" type="text" class="validate">
+                                <label for="userInput2">Көлем (м<sup>3</sup>/кг)</label>
+                            </div>
+                            <img src="assets/img/formula3.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput3" name="userInput3" type="text" class="validate">
+                                <label for="userInput3">Газдың секундтық салмақтық шығыны (кг/сек)</label>
+                            </div>
+                        </div>
+                        <div class="input-field col s6 clearB user_input_field">
+                            <p>СИ жүйесін қолдану кезінде ағыс жылдамдығын есептеу мына түрде орындалады.</p>
+                            <p>R = 8314/32 Дж/ кг*град</p>
+                            <img src="assets/img/formula4.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput4" name="userInput4" type="text" class="validate">
+                                <label for="userInput4">Газдың секундтық салмақтық шығыны (кг/сек)</label>
+                            </div>
+                        </div>
+                        <div class="input-field col s6 clearB user_input_field">
+                            <img src="assets/img/formula5.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput5" name="userInput5" type="text" class="validate">
+                                <label for="userInput5">Газдың секундтық салмақтық шығыны (кг/сек)</label>
+                            </div>
+                        </div>
+                        <div class="input-field col s6 clearB user_input_field">
+                            <img src="assets/img/formula6.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput6" name="userInput6" type="text" class="validate">
+                                <label for="userInput6">Газдың секундтық салмақтық шығыны (кг/сек)</label>
+                            </div>
+                        </div>
+                        <div class="input-field actionButtons clearB">
+                            <button class="waves-effect deep-orange darken-1 btn" type="button" id="generateRandom">Генерировать</button>
+                            <button class="waves-effect waves-light btn right green darken-1" type="submit">Тексеру</button>
+                        </div>
+                        <div class="input-field actionButtons clearB">
+                            <button class="waves-effect waves-light btn yellow darken-2 left" type="button" id="show_solution">Шығарылуы</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="answers clearB" id="solution">
+                    <div class="content">
+                        <div class="blockTitle">
+                            Шығарылуы:
+                        </div>
+                        <div class="steps">
+                            <p>
+                                а) Ағыс жылдамдығын анықтаймыз:
+                            </p>
+                            <span>c <sub>2</sub> = <span class="c2">722.7903</span> м/сек</span>
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Газдың секундтық салмақтық шығыны:
+                            </p>
+                            <p>
+                                v<sub>1</sub> = <span class="v1">0.0165</span> м<sub>3</sub>/кг
+                            </p>
+                            <span>G = <span class="G">0.2557</span></span> кг/сек
+                        </div>
+                        <div class="steps">
+                            <p>
+                                б) СИ жүйесін қолдану кезінде ағыс жылдамдығын есептеу мына түрде орындалады.
+                            </p>
+                            <span>c <sub>2</sub> = <span class="c2b">722.5782</span> м/сек</span>
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Массалық шығын есебін өзге тәсілмен аламыз. Шыға берістегі ағыстың меншікті  көлемін  анықтаймыз.
+                            </p>
+                            <span>v<sub>2</sub> = <span class="v2"></span>0.0238</span> м<sup>3</sup>/кг
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Массалық шығынды үздіксіздік теңдеуінен  табамыз.
+                            </p>
+                            <span>m = <span class="m"></span>0.6072</span> кг/сек
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -93,5 +127,6 @@
         <script src="../../../js/tasks/jquery-3.3.1.min.js"></script>
         <script src="../../../js/tasks/materialize.min.js"></script>
         <script src="assets/js/custom.js"></script>
-    </body>
+</body>
+
 </html>

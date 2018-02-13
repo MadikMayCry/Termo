@@ -6,12 +6,16 @@ $(document).ready(function() {
         p2 = 36,
         t1 = 100,
         k = 1.4,
-        r = 26.5,
+        r1 = 26.5,
+        r2 = 259.8125,
         g = 9.81,
         f = 20 * Math.pow(10, -6),
         c2 = 722.7903,
         v1 = 0.0165,
         G = 0.2557,
+        c2b = 722.5782,
+        v2 = 0.0238,
+        m = 0.6072,
         beta;
 
     var allCorrect = false;
@@ -36,7 +40,10 @@ $(document).ready(function() {
                 var values = {
                     "userInput1": c2,
                     "userInput2": v1,
-                    "userInput3": G
+                    "userInput3": G,
+                    "userInput4": c2b,
+                    "userInput5": v2,
+                    "userInput6": m
                 };
 
                 $.each(values, function(key, value) {
@@ -71,36 +78,39 @@ $(document).ready(function() {
 
     function generateRandom() {
 
-
         t1 = Math.floor(Math.random() * 150);
         p1 = Math.round(Math.floor(Math.random() * 40) + 40);
         p2 = Math.round(Math.floor(Math.random() * 15) + 25);
 
+
         console.log(t1, p1, p2);
         beta = Math.round(p1 / p2 * 100) / 100;
+
+
         ktemp1 = t1 + 273;
-        c2 = Math.round(Math.sqrt(2 * g * k / (k - 1) * r * ktemp1 * Math.pow(1 - (p2 / p1), (k - 1) / k)) * 10000) / 10000;
+        c2 = Math.round(Math.sqrt(2 * g * k / (k - 1) * r1 * ktemp1 * Math.pow(1 - (p2 / p1), (k - 1) / k)) * 10000) / 10000;
         nextp1 = p1 * Math.pow(10, 4);
-
-
-        v1 = Math.round(r * ktemp1 / (nextp1) * 10000) / 10000;
+        v1 = Math.round(r1 * ktemp1 / (nextp1) * 10000) / 10000;
         G = Math.round(f * Math.sqrt(2 * g * k / (k - 1) * (nextp1 / v1) * (Math.pow((p2 / p1), 2 / k) - Math.pow((p2 / p1), (k + 1) / k))) * 10000) / 10000;
-        console.log("T1 = " + ktemp1, c2, v1, G);
+
+        c2b = Math.round(Math.sqrt(2 * k / (k - 1) * r2 * ktemp1 * Math.pow(1 - (p2 / p1), (k - 1) / k)) * 10000) / 10000;
+        v2 = Math.round(v1 * Math.pow((p1 / p2), 1 / k) * 10000) / 10000;
+        m = Math.round(f * c2b / v2 * 10000) / 10000;
+        console.log("T1 = " + ktemp1, c2, v1, G, c2b, v2, m);
 
 
         initalize();
     }
 
     function initalize() {
-        // $(".p1").html(p1);
-        // $(".p2").html(p2);
-        // $(".r1").html(r1);
-        // $(".r2").html(r2);
-        // $(".v11").html(v11);
-        // $(".v12").html(v12);
+        $(".p1").html(p1);
+        $(".p2").html(p2);
+        $(".t1").html(t1);
+        $(".c2").html(c2);
+        $(".v1").html(v1);
+        $(".G").html(G);
+        $(".c2b").html(c2b);
         //
-        // $(".v21").html(v21);
-        // $(".v22").html(v22);
         // $(".qt").html(qt);
         //
         //
