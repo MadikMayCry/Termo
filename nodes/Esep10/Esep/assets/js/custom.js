@@ -9,6 +9,7 @@ $(document).ready(function() {
         ntoi = 0.87,
         nkoi = 0.85,
         ktemp2 = 488.87,
+        t2 = 215.87,
         ktemp4 = 583.16,
         nt = 0.4,
         nt0 = 21761.73,
