@@ -1,203 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Esep 9</title>
-        <link rel="stylesheet" href="../../../css/tasks/materialize.min.css">
-        <link rel="stylesheet" href="../../../css/tasks/style.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="contentWrapper">
-                    <div class="esepTitle">
-                        <span class="italic">v</span> = const кезіндегі жылу берілумен жүретін цикл үшін нүктелердегі пайдалы жұмысты, термиялық ПӘК-ті, алынған және берілген жылу мөлшерін табу қажет
 
-                    </div>
-                    <div class="content">
-                        <div class="blockTitle">Берілгені:</div>
-                        <span class="solutionText">
-                            p<sub>1</sub>  = <span class="p1">0.1</span> МПа; t<sub>1</sub>  = <span class="temp1">20</span>; ε = <span class="e">12.7</span> ; k = 1.4.
-                        </span>
-                        <p>
-                            Жұмысшы дене – ауа.  Жылусыйымдылық тұрақты деп аламыз.
-                        </p>
+<head>
+    <meta charset="UTF-8">
+    <title>Esep 9</title>
+    <link rel="stylesheet" href="../../../css/tasks/materialize.min.css">
+    <link rel="stylesheet" href="../../../css/tasks/style.css">
+</head>
 
-                        <p class="primechanie">*Жауаптар жүздікке дейін жуықталады (Мысал: 2.94)</p>
-                        <form action="" class="userForms col s6" id="userForms">
-                            <div class="input-field clearB user_input_field active">
-                                <p class="italic">1 нүкте.</p>
-                                <img src="assets/img/formula1.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput1" name="userInput1" type="text" class="validate">
-                                    <label for="userInput1">Меншікті көлемді анықтаймыз: v<sub>1</sub>(м<sup>3</sup>/кг)</label>
-                                </div>
-                            </div>
-                            <div class="input-field clearB user_input_field">
-                                <p class="italic">2 нүкте.</p>
-                                <img src="assets/img/formula2.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput2" name="userInput2" type="text" class="validate">
-                                    <label for="userInput2">Меншікті көлемді анықтаймыз: v<sub>2</sub>(м<sup>3</sup>/кг)</label>
-                                </div>
-                                    <img src="assets/img/formula2.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput2" name="userInput2" type="text" class="validate">
-                                    <label for="userInput2">Адиабаталық сығылу соңындағы температура: t(K)</label>
-                                </div>
-                                    <img src="assets/img/formula2.png" alt="">
-                                <div class="input-field">
-                                    <input id="userInput2" name="userInput2" type="text" class="validate">
-                                    <label for="userInput2">Меншікті көлемді анықтаймыз: p(МПа)</label>
-                                </div>
-                            </div>
-                            <div class="input-field actionButtons clearB">
-                                <button class="waves-effect deep-orange darken-1 btn" type="button" id="generateRandom">Генерировать</button>
-                                <button class="waves-effect waves-light btn right green darken-1" type="submit">Тексеру</button>
-                            </div>
-                            <div class="input-field actionButtons clearB">
-                                <button class="waves-effect waves-light btn yellow darken-2 left" type="button" id="show_solution">Шығарылуы</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="answers clearB" id="solution">
-                        <div class="content">
-                            <div class="blockTitle">
-                                Шығарылуы:
-                            </div>
-                            <div class="steps">
-                                <p>
-                                    Ауаның бастапқы меншікті көлемі:
-                                    <br>
-                                    <span class="solutionText">v<sub>1</sub> = 287 * (400 / 10<sup>5</sup> ) = 1.15  м<sup>3</sup>/кг</span>
-                                </p>
-                            </div>
-                            <div class="steps">
-                                <p>
-                                    Сығылу процессі соңындағы ауа параметрі:
-                                </p>
-                                <span class="solutionText">
-                                    v<sub>2v</sub> = 0.19  м^3\over кг
-                                </span>
-                                <br>
-                                <span class="solutionText">
-                                    p<sub>2</sub> = 1.25 МПа
-                                </span>
-                                <br>
-                                <span class="solutionText">
-                                    T<sub>2</sub> = 833.88 К
-                                </span>
-                            </div>
-                            <div class="steps">
-                                <p>
-                                    Жану процессінің соңындағы ауа параметрлері:
-                                </p>
-                                <span class="solutionText">
-                                    v<sub>3</sub> = 0.19 м<sup>3</sup>/кг
-                                </span>
-                                <br>
-                                <span class="solutionText">
-                                    p<sub>3</sub> = 1.25 * 3.5 = 4.37 МПа
-                                </span>
-                                <br>
-                                <span class="solutionText">
-                                    T<sub>3</sub> = 833.88 * 3.5 = 2918.58 К
-                                </span>
-                            </div>
-                            <div class="steps">
-                                <p>
-                                    Адиабаталық ұлғаю процессі  соңындағы ауаның параметрі,
-                                </p>
-                                <span class="solutionText">
-                                    v<sub>4</sub> = v<sub>1</sub>} = 1.15 м<sub>3</sub>/кг
-                                </span>
-                                <br>
-                                <span class="solutionText">
-                                    $$ T_4 = {T_3 \over ε ^{k-1}} = {2863 \over 6^{1.41-1}} = 1400 К;$$
-                                </span>
-                                <br>
-                                <span class="solutionText">
-                                    $$ p_4 = {RT_4 \over υ_4} = 287 * {1400 \over (1.15*10)} = 0.35 МПа. $$
-                                </span>
-                            </div>
-                            <div class="steps">
-                                <p>
-                                    Ауаға келетін меншікті жылу:
-                                </p>
-                                <span class="solutionText">
-                                    $$ q_1=c_v (T_3-T_2 )= μc_υ  {T_3 - T_2 \overμc_{υ3}} = {20.9 * (2863-818) \over 2} = 1431.5 {КДж \over кг}. $$
-                                </span>
-                            </div>
-                            <div class="steps">
-                                <p>
-                                    Процесстегі алынған меншікті жылу мөлшері:
-                                </p>
-                                <span class="solutionText">
-                                    $$ q_2 = c_v (T_4 - T_1) = {20.9 * (1400 - 400) \over 29} = 700 {КДж \over кг}. $$
-                                </span>
-                            </div>
-                            <div class="steps">
-                                <p>
-                                    Пайдалы қолданылған меншікті жылу мөлшері:
-                                </p>
-                                <span class="solutionText">
-                                    $$ q_0 = q_1 - q_2 = 1431.5 – 700 = 731.5 {КДж \over кг} $$
-                                </span>
-                            </div>
-                            <div class="steps">
-                                <p>
-                                    Циклдын термиялық ПӘК-ті:
-                                </p>
-                                <span class="solutionText">
-                                    $$ μ_{t0} = {q_0 \over q_1} = 731.5/1431.5 = 0.53 $$
-                                </span>
-                                <br>
-                                немесе
-                                <span class="solutionText">
-                                    $$ μ_{t0} = {1 - 1 \over ε^{k-1}} = 1-{1 \over 6^{1.41-1}} = 0.512 $$
-                                </span>
-                            </div>
-                            <div class="steps">
-                                <p>
-                                    <span class="solutionText">
-                                        $$μ_t0=f(ε) $$
-                                    </span>
-                                    тәуелділігін келесі берілгендермен анықтаймыз.
-                                </p>
-                                <table class="bordered">
-                                    <tbody>
-                                        <tr>
-                                            <td class="infl">$$ε$$</td>
-                                            <td>4</td>
-                                            <td>6</td>
-                                            <td>8</td>
-                                            <td>10</td>
-                                            <td>12</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="infl">$$μ_t0$$</td>
-                                            <td>0.435</td>
-                                            <td>0.512</td>
-                                            <td>0.575</td>
-                                            <td>0.615</td>
-                                            <td>0.638</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="steps">
-                                <p>Ауаның максималды T_3 және минималды T_1 температуралар кезіндегі Карно циклының термиялық ПӘК-ті.</p>
-                                <span class="solutionText">
-                                    $$μ_{t Карно} = 1 - {T_1\over T_3} = 1 - {400 \over 2863} = 0.86$$
-                                </span>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="contentWrapper">
+                <div class="esepTitle">
+                    <span class="italic">p = const</span> кезіндегі жылу берілумен жүретін цикл үшін нүктелердегі пайдалы жұмысты, термиялық ПӘК-ті, алынған және берілген жылу мөлшерін табу қажет
+
+                </div>
+                <div class="content">
+                    <div class="blockTitle">Берілгені:</div>
+                    <span class="solutionText">
+                            p<sub>1</sub>  = <span class="p1">0.1</span> МПа; t<sub>1</sub> = <span class="t1">20</span>; ε = <span class="e">12.7</span> ; k = 1.4.
+                    </span>
+                    <p>
+                        Жұмысшы дене – ауа. Жылусыйымдылық тұрақты деп аламыз.
+                    </p>
+
+                    <p class="primechanie">*Жауаптар жүздікке дейін жуықталады (Мысал: 2.94)</p>
+                    <form action="" class="userForms col s6" id="userForms">
+                        <div class="input-field clearB user_input_field active">
+                            <p class="italic">1 нүкте.</p>
+                            <img src="assets/img/formula1.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput1" name="userInput1" type="text" class="validate">
+                                <label for="userInput1">Меншікті көлемді анықтаймыз: v<sub>1</sub> (м<sup>3</sup>/кг)</label>
                             </div>
                         </div>
+                        <div class="input-field clearB user_input_field ">
+                            <p class="italic">2 нүкте.</p>
+                            <p>
+                                Адиабаталық сығылу соңындағы
+                            </p>
+                            <img src="assets/img/formula2.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput2" name="userInput2" type="text" class="validate">
+                                <label for="userInput2">Көлем v<sub>2</sub> (м<sup>3</sup>/кг)</label>
+                            </div>
+                            <img src="assets/img/formula3.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput3" name="userInput3" type="text" class="validate">
+                                <label for="userInput3">Температура: t<sub>2</sub> (℃)</label>
+                            </div>
+                            <img src="assets/img/formula4.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput4" name="userInput4" type="text" class="validate">
+                                <label for="userInput4">Қысым: p<sub>2</sub> (МПа)</label>
+                            </div>
+                        </div>
+                        <div class="input-field clearB user_input_field ">
+                            <p class="italic">3 нүкте.</p>
+                            <p>
+                                Изобаралық процесстегі
+                            </p>
+                            <img src="assets/img/formula5.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput5" name="userInput5" type="text" class="validate">
+                                <label for="userInput5">Көлем v<sub>3</sub>(м<sup>3</sup>/кг)</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="userInput6" name="userInput6" type="text" class="validate">
+                                <label for="userInput6">Температура t<sub>3</sub> (℃)</label>
+                            </div>
+                            <img src="assets/img/formula7.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput7" name="userInput7" type="text" class="validate">
+                                <label for="userInput7">Қысым p<sub>3</sub> (МПа)</label>
+                            </div>
+                        </div>
+                        <div class="input-field clearB user_input_field ">
+                            <p class="italic">4 нүкте.</p>
+                            <p>
+                                Адиабаталық ұлғаю соңындағы
+                            </p>
+                            <img src="assets/img/formula8.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput8" name="userInput8" type="text" class="validate">
+                                <label for="userInput8">Көлем v<sub>4</sub> (м<sup>3</sup>/кг)</label>
+                            </div>
+                            <img src="assets/img/formula9.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput9" name="userInput9" type="text" class="validate">
+                                <label for="userInput9">Температура: t<sub>4</sub> (℃)</label>
+                            </div>
+                            <img src="assets/img/formula10.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput10" name="userInput10" type="text" class="validate">
+                                <label for="userInput10">Қысым: p<sub>4</sub> (МПа)</label>
+                            </div>
+                        </div>
+                        <div class="input-field clearB user_input_field ">
+                            <img src="assets/img/formula11.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput11" name="userInput11" type="text" class="validate">
+                                <label for="userInput11">Берілген жылудың мөлшері q<sub>1</sub> (м<sup>3</sup>/кг)</label>
+                            </div>
+                        </div>
+
+                        <div class="input-field clearB user_input_field ">
+                            <img src="assets/img/formula12.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput12" name="userInput12" type="text" class="validate">
+                                <label for="userInput12">Алынған жылу мөлшері q<sub>2</sub> (кДж/кг)</label>
+                            </div>
+                        </div>
+                        <div class="input-field clearB user_input_field ">
+                            <img src="assets/img/formula13.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput13" name="userInput13" type="text" class="validate">
+                                <label for="userInput13">Циклдің термиялық ПӘК-і (%)</label>
+                            </div>
+                        </div>
+                        <div class="input-field clearB user_input_field ">
+                            <img src="assets/img/formula14.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput14" name="userInput14" type="text" class="validate">
+                                <label for="userInput14">Циклдің жұмысы l<sub>0</sub> (кДж/кг)</label>
+                            </div>
+                        </div>
+
+
+                        <div class="input-field actionButtons clearB">
+                            <button class="waves-effect deep-orange darken-1 btn" type="button" id="generateRandom">Генерировать</button>
+                            <button class="waves-effect waves-light btn right green darken-1" type="submit">Тексеру</button>
+                        </div>
+                        <div class="input-field actionButtons clearB">
+                            <button class="waves-effect waves-light btn yellow darken-2 left" type="button" id="show_solution">Шығарылуы</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="answers clearB" id="solution">
+                    <div class="content">
+                        <div class="blockTitle">
+                            Шығарылуы:
+                        </div>
+                        <div class="steps">
+                            <p class="italic">
+                                1 нүкте
+                            </p>
+                            <p>
+                                Меншікті көлемді анықтаймыз
+                                <br>
+                                <span class="solutionText">v<sub>1</sub> = <span class="v1">0.84</span> м<sup>3</sup>/кг</span>
+                            </p>
+                        </div>
+                        <br>
+                        <div class="steps">
+                            <p class="italic">
+                                2 нүкте
+                            </p>
+                            <p>
+                                Сығылу дәрежесі мынаған тең болғандықтан
+                            </p>
+                            <p>
+                                ε = <span class="e">12.7</span>
+                            </p>
+                            <p>
+                                <span class="solutionText">v<sub>2</sub> = <span class="v2">0.07</span> м<sup>3</sup>/кг</span>
+                            </p>
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Адиабаталық сығылу соңындағы температура
+                            </p>
+                            <p>
+                                T<sub>4</sub> = <span class="ktemp2">791.66</span> K
+                            </p>
+                            <p>
+                                t<sub>4</sub> = <span class="t2">518.66</span> ℃
+                            </p>
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Адиабаталық сығылу соңындағы қысым
+                            </p>
+                            <p>
+                                p<sub>2</sub> = <span class="p2">3.25</span> МПа
+                            </p>
+                        </div>
+                        <br>
+                        <div class="steps">
+                            <p>
+                                3 нүкте
+                            </p>
+                            <p>
+                                Изобаралық процесстегі параметрлер қатынасынан
+                            </p>
+                            <p>
+                                <span>T<sub>3</sub>/T<sub>2</sub> = v<sub>3</sub>/v<sub>2</sub> = p = 2</span>
+                            </p>
+                            <p>
+                                v<sub>3</sub> = <span class="v3">0.14</span> м<sup>3</sup>/кг
+                            </p>
+                            <p>
+                                T<sub>3</sub> = <span class="ktemp3">1583.32</span> K
+                                <br> t
+                                <sub>3</sub> = <span class="t3">1310.32</span> ℃
+                            </p>
+                            <p>
+                                p<sub>3</sub> = p<sub>2</sub> = <span class="p3">3.25</span>
+                            </p>
+                        </div>
+                        <br>
+                        <div class="steps">
+                            <p>
+                                4 нүкте.
+                            </p>
+                            <p>
+                                v<sub>4</sub> = v<sub>1</sub> = <span class="v4">0.84</span> м<sup>3</sup>/кг
+                            </p>
+                            <p>
+                                Адиабаталық ұлғаю соңындағы қысым
+                            </p>
+                            <p>
+                                p<sub>4</sub> = <span class="p4">0.26</span> МПа
+                            </p>
+                        </div>
+                        <div class="steps">
+                            <p>
+                                Адиабаталық сығылу соңындағы температураны изохоралық процесстегі параметрлер қатынасынан анықтаймыз.
+                            </p>
+                            <p>
+                                T<sub>4</sub> = <span class="ktemp4">761.8</span> K
+                            </p>
+                            <p>
+                                t<sub>4</sub> = <span class="t4">488.8</span> ℃
+                            </p>
+                        </div>
+                        <br>
+                        <div class="steps">
+                            <p>
+                                Берілген жылудың мөлшері
+                            </p>
+                            <p>
+                                q<sub>1</sub> = <span class="q1">800.95</span> м<sub>3</sub>/кг
+                            </p>
+                            <p>
+                                Алынған жылу мөлшері
+                            </p>
+                            <p>
+                                q<sub>2</sub> = <span class="q1">800.95</span> кДж/кг
+                            </p>
+                            <p>
+                                Циклдің термиялық ПӘК-і
+                            </p>
+                            <p>
+                                η<sub>t</sub> = <span class="nt">0.58</span> %
+                            </p>
+                            <p>
+                                Циклдің жұмысы
+                            </p>
+                            <p>
+                                l<sub>0</sub> = <span class="l0">461.49</span> кДж/кг
+                            </p>
+                        </div>
+
+
                     </div>
+                </div>
+                <div class="bg">
                 </div>
             </div>
         </div>
-        <script src="../../../js/tasks/jquery-3.3.1.min.js"></script>
-        <script src="../../../js/tasks/materialize.min.js"></script>
-        <script src="assets/js/custom.js"></script>
-    </body>
+    </div>
+    <script src="../../../js/tasks/jquery-3.3.1.min.js"></script>
+    <script src="../../../js/tasks/materialize.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
 </html>
