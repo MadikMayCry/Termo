@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Esep 10</title>
+    <title>Esep 11</title>
     <link rel="stylesheet" href="../../../css/tasks/materialize.min.css">
     <link rel="stylesheet" href="../../../css/tasks/style.css">
 </head>
@@ -13,36 +13,21 @@
         <div class="row">
             <div class="contentWrapper">
                 <div class="esepTitle">
-
+                    (Ренкин) термиялық ПӘК-тін анықтаңыз.
                 </div>
                 <div class="content">
                     <div class="blockTitle">Берілгені:</div>
                     <p>
-                        Тұрақты қысымда отынды жағатын газ турбиналық қондырғы компрессорына түсетін ауаның бастапқы параметрлері: p<sub>1</sub> = <span class="p1">1</span> кГ/см<sup>2</sup>, t<sub>1</sub> = <span class="t1">20</span>℃.
+                        Егер бу турбинасының қуаты N = <span class="N">50</span> МВт кезінде будың бастапқы параметрлері:
                     </p>
                     <p>
-                        ГТҚ-ның компрессорындағы қысымды көтеру дәрежесі β = <span class="beta">6</span>. Турбина соплосы алдындағы газ температурасы t<sub>3</sub> = <span class="t3">700</span>℃.
-                        <br> Жұмысшы денені ауа деп қарастыруға болады. Оның жылусыйымдылығы молекула-кинетикалық теория бойынша анықталады. Компрессор ауаны 2 *10 <sup>5</sup> кг/сағ мөлшерде сорады.
+                        p<sub>1</sub> = <span class="p1">9</span> МПа және t<sub>1</sub> = <span class="t1">500</span> ℃, конденсатордағы қысым p<sub>2</sub> = <span class="p2">0.04</span> МПа болатын бу қондырғысының негізгі циклының (Ренкин) термиялық
+                        ПӘК-тін анықтаңыз.
                     </p>
                     <p>
-                        Табу керек:
-                        <ul class="tabuKerek">
-                            <li>
-                                1) Идеал ГТҚ-ның барлық нүктесіндегі параметрлерді (мұндай циклдың сығу мен ұлғаю процесстері изоэнтропты), термиялық ПӘК-тін, турбина мен компрессордың, жалпы ГТҚ-ның теориялық қуатын анықтау;
-                            </li>
-                            <li>
-                                2) Нақты циклдың барлық нүктедегі параметрлерін компрессор мен турбинадағы ұлғаю мен сығылу процесстерінің қайтымсыздығын ескеріп анықтау. Турбина мен компрессордің ішкі салыстырмалы ПӘК-тері: η<sup>T</sup><sub>oi</sub>=0.87;
-                                η
-                                <sub>oi</sub><sup>k</sup> = 0.85
-                            </li>
-                            <li>
-                                3) ГТҚ-ның ішкі ПӘК-тін, нақты ГТҚ-ның, турбина, компрессордың ПӘК-терін анықтау. k = 1.4 деп қабылдаймыз. Екі циклді де TS-диаграммада көрсету.
-                            </li>
-
-                        </ul>
-
+                        i<sub>1</sub> = <span class="i1">3386</span> кДж/кг; p<sub>2</sub> = <span class="p2">0.04</span> МПа қысымға дейін адиабаталы ұлғаю соңында меншікті энтальпия i<sub>2</sub> = <span class="i2">2006</span> кДж/кг. Ал кесте бойынша
+                        <span class="p2">0.04</span> МПа кезінде i<sub>2</sub>' = <span class="i22">121.42</span> кДж/кг.
                     </p>
-                    <img src="assets/img/graph.png" style="width: 200px;" alt="">
                     <p class="primechanie">*Жауаптар жүздікке дейін жуықталады (Мысал: 2.94)</p>
 
                     <form action="" class="userForms col s6" id="userForms">
@@ -50,15 +35,24 @@
                             <img src="assets/img/formula1.png" alt="">
                             <div class="input-field">
                                 <input id="userInput1" name="userInput1" type="text" class="validate">
-                                <label for="userInput1">Температура T<sub>2</sub> (℃)</label>
+                                <label for="userInput1">Термиялық ПӘК</label>
                             </div>
+                        </div>
+                        <div class="input-field clearB user_input_field">
                             <img src="assets/img/formula2.png" alt="">
                             <div class="input-field">
                                 <input id="userInput2" name="userInput2" type="text" class="validate">
-                                <label for="userInput2">Температура T<sub>4</sub> (℃)</label>
+                                <label for="userInput2">Будың меншікті шығыны (кг/кВт * сағ)</label>
                             </div>
                         </div>
-                        
+                        <div class="input-field clearB user_input_field">
+                            <img src="assets/img/formula3.png" alt="">
+                            <div class="input-field">
+                                <input id="userInput3" name="userInput3" type="text" class="validate">
+                                <label for="userInput3">Будың сағаттық шығыны (Т/сағ)</label>
+                            </div>
+                        </div>
+
                         <div class="input-field actionButtons clearB">
                             <button class="waves-effect deep-orange darken-1 btn" type="button" id="generateRandom">Генерировать</button>
                             <button class="waves-effect waves-light btn right green darken-1" type="submit">Тексеру</button>
@@ -75,80 +69,26 @@
                         </div>
                         <div class="steps">
                             <p>
-                                Суретте ГТҚ-ның 12341 қайтымды және 15361 қайтымсыз циклдері TS-диаграммада көрсетілген. Қайтымды циклдің нүктелеріндегі температуралар былай анықталады:
-                            </p>
-                            <p>
-                                T<sub>2</sub> = <span class="t2">215.87</span> ℃
-                                <br> T
-                                <sub>4</sub> = <span class="t4">310.16</span> ℃
-                            </p>
-                        </div>
-                        <div class="steps">
-                            <p>
                                 Термиялық ПӘК:
                             </p>
                             <p>
-                                η<sub>t</sub> = <span class="nt">0.4</span>
+                                η<sub>t Ренкин</sub> = <span class="nt">0.48</span>
                             </p>
                         </div>
                         <div class="steps">
                             <p>
-                                Теориялық қуат:
+                                Будың меншікті шығыны:
                             </p>
                             <p>
-                                N<sub>0</sub><sup>T</sup> = <span class="nt0">21761.73</span> квт
-                            </p>
-                            <p>
-                                N<sub>0</sub><sup>K</sup> = <span class="nk0">10933.9</span> квт
-                            </p>
-                            <p>
-                                N<sub>0</sub><sup>ГТҚ</sup> = <span class="ngtk0">10827.83</span> квт
+                                d<sub>0</sub> = <span class="d0">2.29</span> кг/(кВт*сағ)
                             </p>
                         </div>
                         <div class="steps">
                             <p>
-                                Нақты циклдің нүтелеріндегі температура төмендегідей есептелінеді. Компрессордың ішкі салыстырмалы ПӘК үшін негізгі формула арқылы сығылу соңындағы температура t<sub>5</sub> анықталады:
+                                Будың сағаттық шығыны:
                             </p>
                             <p>
-                                t<sub>5</sub> = <span class="t5">250.44</span> ℃
-                            </p>
-                            <p>
-                                Қайтымсыз адиабаталық ұлғаю соңындағы температура:
-                            </p>
-                            <p>
-                                t<sub>6</sub> = <span class="t6">360.84</span> ℃
-                            </p>
-                        </div>
-                        <div class="steps">
-                            <p>
-                                ГТҚ-ның ішкі ПӘК-ті:
-                            </p>
-                            <p>
-                                η<sub>i</sub><sup>ГТҚ</sup> = <span class="ngtki">0.24</span>
-                            </p>
-                        </div>
-                        <div class="steps">
-                            <p>
-                                Турбинаның нақты қуаты:
-                            </p>
-                            <p>
-                                N<sub>Д</sub><sup>T</sup> = <span class="ntd">18932.66</span> квт
-                            </p>
-                        </div>
-                        <div class="steps">
-                            <p>
-                                Компрессор білігіндегі нақты қуаты:
-                            </p>
-                            <p>
-                                N<sub>Д</sub><sup>k</sup> = <span class="nkd">12863.67</span> квт
-                            </p>
-                        </div>
-                        <div class="steps">
-                            <p>
-                                Газтурбиналы қондырғының нақты қуаты:
-                            </p>
-                            <p>
-                                N<sub>Д</sub><sup>ГТУ</sup> = <span class="ngtud">6068.99</span> квт
+                                D<sub>0</sub> = <span class="D0">114.5</span> т/сағ
                             </p>
                         </div>
                     </div>
