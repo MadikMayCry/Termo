@@ -5,10 +5,14 @@
 
 body {
     background-color: #e3f2fd;
+    background-image: url(../../images/back.jpg);
+    -webkit-background-size: 256px;
+    background-size: 256px;
 }
 
 .contentWrapper {
     margin-top: 50px;
+    background-color: #fff;
 }
 
 .content {
@@ -35,6 +39,7 @@ input.wrong {
 .esepTitle {
     font-size: 26px;
     text-align: center;
+    padding: 25px;
 }
 
 .esepTitle::first-letter {
