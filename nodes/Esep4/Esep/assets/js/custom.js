@@ -5,7 +5,24 @@ $(document).ready(function() {
         px = 12.51564,
         sx = 9.56809,
         th, r, v1, v2, i1, i2, s1, s2, x = 0.8;
+
+
+    var correctCount = 0;
+    var correctArrays = [];
+    var sum = 0;
+    var allnonactiveCorrect = $('.user_input_field input[type="text"]').length;
+    var allactiveCorrect;
+
     $("#userForms").submit(function(event) {
+
+        allnonactiveCorrect = $('.user_input_field input[type="text"]').length;
+        allactiveCorrect = $('.user_input_field.active input[type="text"]').length;
+
+
+        correctArrays = new Array(allactiveCorrect);
+
+
+        correctArrays.fill(0);
         //Variables
         event.preventDefault();
         var isValid = true;
@@ -27,14 +44,35 @@ $(document).ready(function() {
                 $.each(values, function(key, value) {
                     if ((inputId == key) && (inputVal == value)) {
                         correctInput(input);
+                        correctArrays[correctCount] = 1;
+                        sum = correctArrays.reduce((a, b) => a + b, 0);
+
+                        if (correctArrays.every(allCorrectCheck)) {
+                            console.log("all correct");
+                            $(input).parent().parent().next(".user_input_field").slideDown().addClass("active");
+
+
+                            console.log("Sum of corrects = " + sum);
+
+                            if (allnonactiveCorrect == allactiveCorrect) {
+                                mark(sum, allnonactiveCorrect);
+                            }
+
+                        }
+
                         return false;
                     } else {
                         wrongInput(input);
+                        correctArrays[correctCount] = 0;
                     }
                 });
+                correctCount++;
             }
         });
 
+        console.log(correctArrays.toString());
+
+        correctCount = 0;
         if (!isValid) {
             Materialize.toast('Неверный ввод данных', 4000);
         }
@@ -119,6 +157,13 @@ $(document).ready(function() {
         console.log(vx, ix, px, sx);
     }
 
+    function mark(sum, marks) {
+        $("#mark").show();
+        sum = Math.round((sum / marks) * 100 * 100) / 100;
+        $("#markValue").html(sum);
+        $("#markSend").html('<a href="problem' + sum + '">Завершить задачу</a>');
+    }
+
     function wrongInput(argument) {
         $(argument).removeClass("correct");
         $(argument).addClass("wrong");
@@ -130,14 +175,24 @@ $(document).ready(function() {
     function correctInput(argument) {
         $(argument).removeClass("wrong");
         $(argument).addClass("correct");
-        $(argument).parent().parent().next(".user_input_field").slideDown().addClass("active");
+
     }
 
     function show_answers(argument) {
+        $("#generateRandom").prop("disabled", true);
+        $("button:submit").prop("disabled", true);
+
         $(".answers").slideDown();
         $('html, body').animate({
             scrollTop: $("#solution").offset().top
         }, 1000);
+
+        mark(sum, allnonactiveCorrect);
     }
+
+    function allCorrectCheck(argument) {
+        return argument == 1;
+    }
+
 
 });

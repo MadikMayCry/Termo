@@ -27,17 +27,26 @@ $(document).ready(function() {
         d0 = 2.29,
         D0 = 114.5;
 
-    var allCorrect = false;
     var correctCount = 0;
     var correctArrays = [];
-
+    var sum = 0;
+    var allnonactiveCorrect = $('.user_input_field input[type="text"]').length;
+    var allactiveCorrect;
     $("#userForms").submit(function(event) {
-        //Active inputs length
-        correctArrays = new Array($('.user_input_field.active input[type="text"]').length);
+        //Take length off all inputs and active inputs
+        allnonactiveCorrect = $('.user_input_field input[type="text"]').length;
+        allactiveCorrect = $('.user_input_field.active input[type="text"]').length;
+
+        //Take length of all activve inputs
+        correctArrays = new Array(allactiveCorrect);
+
+        //Fill array with zero
         correctArrays.fill(0);
 
         event.preventDefault();
+
         var isValid = true;
+
         $('.user_input_field.active input[type="text"]').each(function() {
             if (!$.isNumeric($(this).val())) {
                 isValid = false;
@@ -52,14 +61,28 @@ $(document).ready(function() {
                     "userInput3": D0
                 };
 
+                //Check if key is equal to Input id attribute
                 $.each(values, function(key, value) {
                     if ((inputId == key) && (inputVal == value)) {
                         correctInput(input);
                         correctArrays[correctCount] = 1;
+
+                        sum = correctArrays.reduce((a, b) => a + b, 0);
+
                         if (correctArrays.every(allCorrectCheck)) {
                             console.log("all correct");
                             $(input).parent().parent().next(".user_input_field").slideDown().addClass("active");
+
+
+
+                            console.log("Sum of corrects = " + sum);
+
+                            if (allnonactiveCorrect == allactiveCorrect) {
+                                mark(sum, allnonactiveCorrect);
+                            }
+
                         }
+
                         return false;
                     } else {
                         wrongInput(input);
@@ -69,9 +92,10 @@ $(document).ready(function() {
                 correctCount++;
             }
         });
-        console.log(correctArrays.toString());
-        correctCount = 0;
 
+        console.log(correctArrays.toString());
+
+        correctCount = 0;
         if (!isValid) {
             Materialize.toast('Неверный ввод данных', 4000);
         }
@@ -127,6 +151,15 @@ $(document).ready(function() {
 
     }
 
+    function mark(sum, marks) {
+        $("#mark").show();
+        console.log(sum + " sum");
+        sum = Math.round((sum / marks) * 100 * 100) / 100;
+        $("#markValue").html(sum);
+        $("#markSend").html('<a href="problem' + sum + '">Завершить задачу</a>');
+    }
+
+
     function wrongInput(argument) {
         $(argument).removeClass("correct");
         $(argument).addClass("wrong");
@@ -138,15 +171,22 @@ $(document).ready(function() {
     function correctInput(argument) {
         $(argument).removeClass("wrong");
         $(argument).addClass("correct");
+
     }
 
     function show_answers(argument) {
+        $("#generateRandom").prop("disabled", true);
+        $("button:submit").prop("disabled", true);
+
         $(".answers").slideDown();
         $('html, body').animate({
             scrollTop: $("#solution").offset().top
-        });
+        }, 1000);
+
+        mark(sum, allnonactiveCorrect);
     }
 
+    //Return 1 if all active inputs are correct
     function allCorrectCheck(argument) {
         return argument == 1;
     }

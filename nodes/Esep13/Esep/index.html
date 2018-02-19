@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Esep 15</title>
+    <title>Esep 13</title>
     <link rel="stylesheet" href="../../../css/tasks/materialize.min.css">
     <link rel="stylesheet" href="../../../css/tasks/style.css">
 </head>
@@ -14,23 +14,43 @@
         <div class="row">
             <div class="contentWrapper">
                 <div class="esepTitle">
-                    Қорғасын тотығы, су (бу) және екі атомды қорғасын тотықтарының сәйкесінше <span class="pbo">52700</span>, <span class="h2o">57800</span> және
-                    <span class="pbo2">65300</span> кал/моль стандарт жылу түзілу мәндерін біле отырып, сутегі екі атомды қорғасын мен су (бу) түзілу тотығына дейін қалпына келу реакциясының жылулық құбылысын анықтаңыз.
+
                 </div>
                 <div class="content">
                     <div class="blockTitle">Берілгені:</div>
-                    <span class="italic">PbO</span> = <span class="pbo">52700</span>
-                    <br>
-                    <span class="italic">PbO<sub>2</sub></span> = <span class="pbo2">65300</span>
-                    <br>
-                    <span class="italic">H<sub>2</sub>O</span> = <span class="h2o">57800</span>
-                    <br>
-                    <span class="italic">Т/к Q<sub>p</sub> </span>-?
+                    <p>
+                        Бу турбинасына параметрлері p<sub>1</sub> = <span class="p1"></span>90 кГ/см<sub>2</sub> және t<sub>1</sub> = <span class="t1"></span>℃ тең бу келіп түседі.
+                    </p>
+                    <p>
+                        Турбинаның екі регенеративті алымы бар. Алымдардың қысымы p<sub>1</sub><sup>0</sup> = <span class="p01">5</span> кг/см<sub>2</sub> және p<sub>2</sub><sup>0</sup> = <span class="p02">1.2</span> кг/см<sub>2</sub> . Конденсатордығы
+                        қысым p<sub>1</sub><sup>0</sup> = <span class="p001">0.04</span> кг/см<sup>2</sup> тең. 1 МДж және 1 кВт*сағ өндірілген энергия үшін будың меншікті шығыны және регенеративті циклдын термиялық ПӘК-тін анықтаңыз. Содан соң бұл көрсеткіштерді
+                        регенерациясыз цикл көрсеткішімен салыстырыңыз. Регенеративті қыздыруды енгізуден болатын үнемділік мөлшерін есептеңіз.
+                    </p>
+                    <img src="assets/img/graph.png" alt="">
+                    <p>
+                        Жоғарыда көрсетілген суретке сәйкес is- диаграммасы мен кестеге сәйкес энтальпияларды табамыз:
+                    </p>
+                    <p>
+
+                        i<sub>1</sub> = <span class="i1"></span>;
+                        i<sub>2</sub> = <span class="i2"></span>;
+                        i<sub>1</sub><sup>0</sup> = 653;
+                         i<sub>2</sub><sup>0</sup> = 594;
+                          i<sub>1</sub><sup>0</sup>' = <span class="i002">152</span>;
+                        i<sub>2</sub><sup>0</sup>'= <span class="i002">104</span>;
+                         және i<sub>2</sub>'= <span class="i002">29</span> ккал/кг;
+                          α<sub>1</sub> және α<sub>2</sub> алымдарының мәнің табу үшін қыздырғыштардың балансын құрамыз.
+                          Бірінші қыздырғыштың балансы мынаған тең:
+
+
+                        <span class="i2">
+
+                        </span>
+                    </p>
                     <p class="primechanie">*Жауаптар ондықтарға дейін жуықталады (Мысал: 2.9)</p>
 
                     <form action="" class="userForms col s8" id="userForms">
                         <div class="input-field clearB user_input_field active">
-                            <img src="assets/img/formula1.png" alt="">
                             <div class="input-field">
                                 <input id="userInput1" name="userInput1" type="text" class="validate">
                                 <label for="userInput1">Мұздатқыш камерасына келіп түсетін ауа температурасы: (K)</label>
@@ -45,6 +65,7 @@
                         </div>
                     </form>
                 </div>
+                <fieldset class="box" id="mark" hidden>Ваша оценка: <span id="markValue"></span>% <span id="markSend"></span></fieldset>
                 <div class="answers clearB" id="solution">
                     <div class="content">
                         <div class="blockTitle">

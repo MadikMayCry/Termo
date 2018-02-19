@@ -47,11 +47,12 @@ $(document).ready(function() {
                     if ((inputId == key) && (inputVal == value)) {
                         correctInput(input);
                         correctArrays[correctCount] = 1;
+                        sum = correctArrays.reduce((a, b) => a + b, 0);
+
                         if (correctArrays.every(allCorrectCheck)) {
                             console.log("all correct");
                             $(input).parent().parent().next(".user_input_field").slideDown().addClass("active");
 
-                            sum = correctArrays.reduce((a, b) => a + b, 0);
 
                             console.log("Sum of corrects = " + sum);
 
@@ -84,12 +85,7 @@ $(document).ready(function() {
 
     $("#generateRandom").click(generateRandom);
 
-    function mark(sum, marks) {
-        $("#mark").show();
-        sum = (sum / marks) * 100;
-        $("#markValue").html(sum);
-        $("#markSend").html('<a href="problem' + sum + '">Завершить задачу</a>');
-    }
+
 
     function generateRandom() {
         p = Math.round((Math.random() * 1.9 + 0.1) * 100) / 100;
@@ -107,6 +103,13 @@ $(document).ready(function() {
         $(".u").html(u);
     }
 
+    function mark(sum, marks) {
+        $("#mark").show();
+        sum = Math.round((sum / marks) * 100 * 100) / 100;
+        $("#markValue").html(sum);
+        $("#markSend").html('<a href="problem' + sum + '">Завершить задачу</a>');
+    }
+
     function wrongInput(argument) {
         $(argument).removeClass("correct");
         $(argument).addClass("wrong");
@@ -122,8 +125,8 @@ $(document).ready(function() {
     }
 
     function show_answers(argument) {
-        $( "#generateRandom" ).prop( "disabled", true );
-        $("button:submit").prop( "disabled", true );
+        $("#generateRandom").prop("disabled", true);
+        $("button:submit").prop("disabled", true);
 
         $(".answers").slideDown();
         $('html, body').animate({
