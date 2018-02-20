@@ -2,15 +2,23 @@ $(document).ready(function() {
 
     var
         randomValsOne = {
-            .1: [2257.51, 0.001043, 1.694, 417.436, 2674.95, 1.30279, 7.36],
-            .4: [2132.95, 0.001084, 0.4624, 604.723, 2738.06, 1.777, 6.896],
-            .5: [2108.23, 0.001093, 0.3748, 640.185, 2748.11, 1.8611, 6.822],
-            .6: [2085.98, 0.001101, 0.31558, 670.501, 2756.14, 1.9316, 6.76]
+            1: [833, 488, 653, 594, 152, 104, 29, 90, 5, 1.2, 0.04],
+            2: [733, 358, 453, 494, 112, 83, 23, 75, 5, 1.2, 0.044],
+            3: [654, 372, 389, 412, 89, 72, 20, 63, 5, 1.2, 0.056],
+            4: [1024, 612, 712, 675, 190, 124, 32, 93, 5, 1.2, 0.09],
+            5: [1243, 699, 705, 635, 184, 154, 45, 112, 13, 3.5, 0.1],
         };
 
     var correctCount = 0;
     var correctArrays = [];
     var sum = 0;
+    var cons = 4.1868,
+        constime = 3.6,
+        ntp = 0.61,
+        d1 = 2.82,
+        nt = 0.43,
+        d2 = 2.49,
+        nnt = 41.86;
     var allnonactiveCorrect = $('.user_input_field input[type="text"]').length;
     var allactiveCorrect;
     $("#userForms").submit(function(event) {
@@ -37,7 +45,11 @@ $(document).ready(function() {
                 var inputId = input.attr("id");
                 var inputVal = input.val();
                 var values = {
-                    "userInput1": qp,
+                    "userInput1": ntp,
+                    "userInput2": d1,
+                    "userInput3": nt,
+                    "userInput4": d2,
+                    "userInput5": nnt,
                 };
 
                 //Check if key is equal to Input id attribute
@@ -51,8 +63,6 @@ $(document).ready(function() {
                         if (correctArrays.every(allCorrectCheck)) {
                             console.log("all correct");
                             $(input).parent().parent().next(".user_input_field").slideDown().addClass("active");
-
-
 
                             console.log("Sum of corrects = " + sum);
 
@@ -94,27 +104,58 @@ $(document).ready(function() {
     function generateRandom() {
 
         randKey = randomKey(randomValsOne);
-        r1 = randomValsOne[randKey][0];
-        v11 = randomValsOne[randKey][1];
-        v12 = randomValsOne[randKey][2];
-        i11 = randomValsOne[randKey][3];
-        i12 = randomValsOne[randKey][4];
-        s11 = randomValsOne[randKey][5];
-        s12 = randomValsOne[randKey][6];
+        i1 = randomValsOne[randKey][0];
+        i2 = randomValsOne[randKey][1];
+        i01 = randomValsOne[randKey][2];
+        i02 = randomValsOne[randKey][3];
+        i001 = randomValsOne[randKey][4];
+        i002 = randomValsOne[randKey][5];
+        i20 = randomValsOne[randKey][6];
+        p1 = randomValsOne[randKey][7];
+        p01 = randomValsOne[randKey][8];
+        p02 = randomValsOne[randKey][9];
+        p001 = randomValsOne[randKey][10];
 
         a1 = Math.round((i001 - i002) / (i01 - i001) * 100) / 100;
         a2 = Math.round((i002 - i20 - a1 * (i001 - i002)) / (i02 - i002) * 100) / 100;
-        ntp = Math.round((i1 - i2 - a1 * (i01 - i2) - a2 * (i01 - i2)) / (i01 - i001) * 100) / 100;
+        lc = Math.round((i1 - i2 - a1 * (i01 - i2) - a2 * (i01 - i2)) * 100) / 100;
+        ntp = Math.round(lc / (i01 - i001) * 100) / 100;
+        d1 = Math.round(Math.pow(10, 3) / (lc * cons) * constime * 100) / 100;
+        nt = Math.round((i1 - i2) / (i1 - i20) * 100) / 100;
+        lc2 = Math.round((i1 - i2) * 100) / 100;
+        d2 = Math.round(Math.pow(10, 3) / (lc2 * cons) * constime * 100) / 100;
+        nnt = Math.round((ntp - nt) / nt * 100 * 100) / 100;
 
-        // initalize();
+        console.log(a1, a2, "NTP " + ntp, d1, "NT " + nt, d2, nnt);
+        initalize();
 
     }
 
     function initalize() {
-        $(".pbo").html(pbo);
-        $(".h2o").html(h2o);
-        $(".pbo2").html(pbo2);
-        $(".qp").html(qp);
+        $(".p1").html(p1);
+        $(".p01").html(p01);
+        $(".p02").html(p02);
+        $(".p001").html(p001);
+
+
+        $(".a1").html(a1);
+        $(".a2").html(a2);
+
+
+        $(".i1").html(i1);
+        $(".i2").html(i2);
+        $(".i01").html(i01);
+        $(".i02").html(i02);
+        $(".i001").html(i001);
+        $(".i002").html(i002);
+        $(".i20").html(i20);
+
+        $(".ntp").html(ntp);
+        $(".d1").html(d1);
+        $(".nt").html(nt);
+        $(".d2").html(d2);
+        $(".nnt").html(nnt);
+
     }
 
     function mark(sum, marks) {
